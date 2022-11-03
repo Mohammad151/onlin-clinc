@@ -1,0 +1,363 @@
+:root {
+   --black: #36393e;
+   --white: #dcddde;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: "Poppins", sans-serif;
+}
+
+html {
+   font-size: 62.5%;
+}
+
+body {
+   min-height: 100vh;
+   min-width: 100vw;
+   background-color: var(--white);
+}
+
+.wrapper {
+   display: flex;
+   align-items: center;
+   height: 100%;
+   overflow: hidden;
+   min-height:100vh;
+   min-width: 100vw;
+   background-color:#FFFFFF;
+}
+
+::placeholder {
+   font-size: 1.4rem;
+   font-family: "Poppins", sans-serif;
+}
+
+.form {
+   margin-top:-100px ;
+   flex: 2;
+   text-align: center;
+   background: #FFFFFF;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   color: var(--black);
+   /* transform: translate(-530px); */
+   transition: all 1s ease;
+}
+
+.form h1 {
+   font-size: 3.2rem;
+   color: #3AB19B;
+}
+
+.form .social-media {
+   font-size: 2rem;
+   margin: 2rem 0;
+}
+
+.form .social-media>div {
+   border: 1px solid var(--black);
+   height: 5rem;
+   width: 5rem;
+   border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   /* height: ; */
+}
+
+.form .social-media>div:nth-child(2) {
+   margin: 0 2rem;
+}
+
+.form .desc {
+   font-size: 1.4rem;
+   margin-bottom: 2rem;
+}
+
+.form .input-form {
+   min-width: 400px;
+}
+
+.form .input-form .input-cont {
+   width: 100%;
+   position: relative;
+   height: 4rem;
+}
+
+
+.form .input-form .input-cont .input {
+   width: 100%;
+   height: 100%;
+   background: #FFFFFF;
+   border-radius: 3px;
+   border: 1px solid var(--black);
+   padding: 0 3rem;
+
+}
+.password{
+   margin-top: 2rem;
+}
+
+
+.form .input-form .name {
+   transition: all 500ms ease;
+   overflow: hidden;
+}
+.form .input-form .phone {
+   transition: all 500ms ease;
+   overflow: hidden;
+}
+
+.form .input-form .input-cont:nth-child(2) {
+   margin: 2rem 0;
+}
+
+.form .input-form .input-cont .icon {
+   position: absolute;
+   left: 1rem;
+   top: 50%;
+   transform: translateY(-50%);
+   z-index: 2;
+}
+
+.form button {
+   font-size: 1.4rem;
+   text-transform: uppercase;
+   padding: 1em 3em;
+   background:#3AB19B;
+   border-radius: 3rem;
+   border: none;
+   color: var(--white);
+   margin-top: 3rem;
+}
+
+.welcome {
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background-color: #3AB19B;
+   color: var(--white);
+   height: 104vh;
+   z-index: 3;
+   transition: all 1s ease;
+}
+
+.welcome h1 {
+   font-size: 3.2rem;
+}
+.welcome h2 {
+   font-size: 2.2rem;
+   margin-bottom: 20px;
+   padding-top: 20px;
+}
+
+.welcome p {
+   width: 80%;
+   text-align: center;
+   font-size: 1.4rem;
+   margin: 3rem 0;
+}
+
+.welcome button {
+   /* height: 3rem; */
+   font-size: 1.4rem;
+   text-transform: uppercase;
+   padding: 1em 3em;
+   border: 1.5px solid var(--white);
+   background: none;
+   border-radius: 3rem;
+   /* border: none; */
+   color: var(--white);
+   outline: none;
+   cursor: pointer;
+   transition: all 250ms ease;
+}
+
+.welcome button:hover {
+   background-color: var(--white);
+   color: var(--black);
+}
+
+.social-media {
+   display: flex;
+   justify-content: center;
+}
+
+h1 {
+   opacity: 1;
+   transition: opacity 250ms ease;
+}
+
+h1.hide {
+   opacity: 0;
+}
+
+.particle-wrapper {
+   height: 100%;
+   width: 100%;
+   position: absolute;
+   overflow: hidden;
+   pointer-events: none;
+}
+
+.particle {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   z-index: 5;
+   overflow: hidden;
+   /* background-color: #36393e; */
+   pointer-events: none;
+   transition: all 1s ease;
+}
+
+.particle * {
+   position: absolute;
+
+   background-color: var(--white);
+   opacity: 0.07;
+}
+
+.particle .circle {
+   transform: translate(-50%, 50%);
+   height: 30rem;
+   width: 30rem;
+   border-radius: 50%;
+   bottom: 0;
+   left: 0;
+}
+
+.particle .rectangle {
+   height: 5rem;
+   width: 2rem;
+   left: 40rem;
+   top: 70%;
+   transform: rotate(20deg);
+}
+
+.particle .triangle {
+   left: 10%;
+   top: 20%;
+   /* border-left: 2rem solid var(--white); */
+   width: 0;
+   height: 0;
+   border-top: 25px solid transparent;
+   border-right: 50px solid var(--white);
+   border-bottom: 25px solid transparent;
+   background: transparent;
+   transform: rotate(10deg);
+   /* height: 4rem;
+  width: 5rem; */
+}
+
+.particle .two {
+   transform: rotate(60deg);
+   left: 30%;
+   top: 30%;
+}
+
+.particle .square {
+   height: 3rem;
+   width: 3rem;
+   left: 25%;
+   top: 5%;
+   transform: rotate(45deg);
+}
+
+.particle .circle-2 {
+   bottom: 10%;
+   right: 20%;
+   height: 5rem;
+   width: 5rem;
+   border-radius: 50%;
+}
+
+.particle .triangle-3 {
+   top: -5rem;
+   right: -10rem;
+   width: 0;
+   height: 0;
+   border-top: 105px solid transparent;
+   border-right: 200px solid var(--white);
+   border-bottom: 105px solid transparent;
+   background: transparent;
+   transform: rotate(-30deg) translate(-50%, -20%);
+}
+
+.particle .triangle-4 {
+   top: 50%;
+   right: 30%;
+   width: 0;
+   height: 0;
+   border-top: 25px solid transparent;
+   border-right: 50px solid var(--white);
+   border-bottom: 25px solid transparent;
+   background: transparent;
+   transform: rotate(20deg) translate(-50%, -20%);
+}
+
+.particle .square-2 {
+   height: 5rem;
+   width: 5rem;
+   bottom: 25%;
+   right: 5%;
+   transform: rotate(65deg);
+}
+
+.particle .circle-3 {
+   bottom: 50%;
+   right: 50%;
+   height: 3rem;
+   width: 3rem;
+   border-radius: 50%;
+}
+
+.particle .triangle-5 {
+   top: 30%;
+   right: 55%;
+   width: 0;
+   height: 0;
+   border-top: 25px solid transparent;
+   border-right: 80px solid var(--white);
+   border-bottom: 25px solid transparent;
+   background: transparent;
+   transform: rotate(20deg) translate(-50%, -20%);
+}
+
+.particle .square-3 {
+   height: 7rem;
+   width: 7rem;
+   bottom: 25%;
+   right: 50%;
+   transform: rotate(5deg);
+}
+.logo{
+   align-items: center;
+   height: 400px;
+   width:400px;
+
+}
+.radiobutton{
+   display: inline-block;
+   padding-top:20px;
+   font-size: 20px;
+   color: var(--text-color);
+   text-align: center;
+   margin-top: 20px;
+   
+   
+}
+.sign-up{
+   cursor: pointer;
+}
+.fa.fa-smile{
+   font-size: 55px;
+}
