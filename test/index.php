@@ -60,7 +60,7 @@ session_start();
     <div class="container d-flex align-items-center">
 
       <h1 class="logo me-auto"><a href="index.html"><img src="images/logo.gif"></a></h1>
-      
+
 
 
       <nav id="navbar" class="navbar order-last order-lg-0">
@@ -99,7 +99,7 @@ session_start();
           <div class="col-lg-4 d-flex align-items-stretch">
             <div class="content">
               <h3>Why Choose Online clinic?</h3>
-              <p>The online appointment booking process has become the most efficient, effective and easy way to manage appointments and individual contact details since the pandemic.  It not only provides advanced functionality to simplify the whole process but also gives patients a chance to avoid crowded waiting rooms.  COVID-19 has made healthcare providers around the world realize that comfort is a patient's top priority in healthcare.  Booking appointments online, is the easiest and closest way to you
+              <p>The online appointment booking process has become the most efficient, effective and easy way to manage appointments and individual contact details since the pandemic. It not only provides advanced functionality to simplify the whole process but also gives patients a chance to avoid crowded waiting rooms. COVID-19 has made healthcare providers around the world realize that comfort is a patient's top priority in healthcare. Booking appointments online, is the easiest and closest way to you
                 It has a lot of options and has a lot of advantages such as:
               </p>
               <div class="text-center">
@@ -121,14 +121,14 @@ session_start();
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bi bi-people-fill"></i>
                     <h4>2. Increases turnout with automated appointment reminders</h4>
-                    <p>People often forget.  There are many cases where patients schedule appointments and completely forget about them.  So when a patient books a doctor's appointment, clinics spend long periods of time ensuring patients don't miss their appointment at the last minute.  However, when a clinics uses an online appointment booking system, it can send automated reminders and notifications and eliminate the entire manual process.</p>
+                    <p>People often forget. There are many cases where patients schedule appointments and completely forget about them. So when a patient books a doctor's appointment, clinics spend long periods of time ensuring patients don't miss their appointment at the last minute. However, when a clinics uses an online appointment booking system, it can send automated reminders and notifications and eliminate the entire manual process.</p>
                   </div>
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box mt-4 mt-xl-0">
-                    <i class="bx bx-cube-alt"></i>
-                    <h4>3. Ensures better allocation of resources</h4>
-                    <p>The traditional appointment scheduling process requires a lot of time and resources.  The receptionist must check the availability of doctors, manually fill in all patient details, and remind patients of their appointment.  This is a time consuming process and may not be completely flawless.  Therefore, human error can easily be minimized by choosing an online appointment scheduling system.  This system automates the entire process, saves time and reduces the burden on employees.</p>                  </div>
+                  <i class="bi bi-box-fill"></i>                    <h4>3. Ensures better allocation of resources</h4>
+                    <p>The traditional appointment scheduling process requires a lot of time and resources. The receptionist must check the availability of doctors, manually fill in all patient details, and remind patients of their appointment. This is a time consuming process and may not be completely flawless. Therefore, human error can easily be minimized by choosing an online appointment scheduling system. This system automates the entire process, saves time and reduces the burden on employees.</p>
+                  </div>
                 </div>
               </div>
             </div><!-- End .content-->
@@ -175,10 +175,10 @@ session_start();
       </div>
     </section><!-- End About Section -->
 
-   <!-- End  Section -->
+    <!-- End  Section -->
 
     <!-- ======= Appointment Section ======= -->
-    <section id="appointment" class="appointment section-bg">
+    <!-- <section id="appointment" class="appointment section-bg">
       <div class="container">
 
         <div class="section-title">
@@ -238,7 +238,7 @@ session_start();
           <div class="text-center"><button type="submit">Make an Appointment</button></div>
         </form>
 
-      </div>
+      </div> -->
     </section><!-- End Appointment Section -->
 
     <!-- ======= Departments Section ======= -->
@@ -247,7 +247,6 @@ session_start();
 
         <div class="section-title">
           <h2>Departments</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 
         <div class="row gy-4">
@@ -257,16 +256,16 @@ session_start();
                 <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Orthopedic and Fracture Surgery</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Gynecology and Infertility</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Dentistry </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Ear Nose and Throat</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Dermatology and Venereology</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Pediatrics and New Born</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Internal Medicine</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Ophthalmology</a>
               </li>
             </ul>
           </div>
@@ -275,9 +274,8 @@ session_start();
               <div class="tab-pane active show" id="tab-1">
                 <div class="row gy-4">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Cardiology</h3>
-                    <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
-                    <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
+                    <h3>Orthopedic</h3>
+                    <p class="fst-italic"> Orthopedic surgery attempts to recreate the normal anatomy of the fractured bone by reduction of the displacement.[citation needed] This sense of the term "reduction" does not imply any sort of removal or quantitative decrease but rather implies a restoration: re ("back [to initial position]") + ducere ("lead"/"bring"), i.e., "bringing back to normal".</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
                     <img src="assets/img/departments-1.jpg" alt="" class="img-fluid">
@@ -287,9 +285,8 @@ session_start();
               <div class="tab-pane" id="tab-2">
                 <div class="row gy-4">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Et blanditiis nemo veritatis excepturi</h3>
-                    <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
-                    <p>Ea ipsum voluptatem consequatur quis est. Illum error ullam omnis quia et reiciendis sunt sunt est. Non aliquid repellendus itaque accusamus eius et velit ipsa voluptates. Optio nesciunt eaque beatae accusamus lerode pakto madirna desera vafle de nideran pal</p>
+                    <h3> also known as dental medicine and oral medicinein</h3>
+                    <p class="fst-italic">is the branch of medicine focused on the teeth, gums, and mouth. It consists of the study, diagnosis, prevention, management, and treatment of diseases, disorders, and conditions of the mouth, most commonly focused on dentition (the development and arrangement of teeth) as well as the oral mucosa,etc.</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
                     <img src="assets/img/departments-2.jpg" alt="" class="img-fluid">
@@ -299,9 +296,8 @@ session_start();
               <div class="tab-pane" id="tab-3">
                 <div class="row gy-4">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Impedit facilis occaecati odio neque aperiam sit</h3>
-                    <p class="fst-italic">Eos voluptatibus quo. Odio similique illum id quidem non enim fuga. Qui natus non sunt dicta dolor et. In asperiores velit quaerat perferendis aut</p>
-                    <p>Iure officiis odit rerum. Harum sequi eum illum corrupti culpa veritatis quisquam. Neque necessitatibus illo rerum eum ut. Commodi ipsam minima molestiae sed laboriosam a iste odio. Earum odit nesciunt fugiat sit ullam. Soluta et harum voluptatem optio quae</p>
+                    <h3>ENT</h3>
+                    <p class="fst-italic">is concerned with the screening, diagnosis and management of medical and surgical disorders of the ear, the nose and upper respiratory and upper alimentary systems, and related structures of the head and neck.</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
                     <img src="assets/img/departments-3.jpg" alt="" class="img-fluid">
@@ -311,9 +307,8 @@ session_start();
               <div class="tab-pane" id="tab-4">
                 <div class="row gy-4">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Fuga dolores inventore laboriosam ut est accusamus laboriosam dolore</h3>
-                    <p class="fst-italic">Totam aperiam accusamus. Repellat consequuntur iure voluptas iure porro quis delectus</p>
-                    <p>Eaque consequuntur consequuntur libero expedita in voluptas. Nostrum ipsam necessitatibus aliquam fugiat debitis quis velit. Eum ex maxime error in consequatur corporis atque. Eligendi asperiores sed qui veritatis aperiam quia a laborum inventore</p>
+                    <h3>Pediatrics</h3>
+                    <p class="fst-italic">Pediatrics (also spelled paediatrics or pædiatrics) is the branch of medicine that involves the medical care of infants, children, adolescents, and young adults.</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
                     <img src="assets/img/departments-4.jpg" alt="" class="img-fluid">
@@ -323,9 +318,9 @@ session_start();
               <div class="tab-pane" id="tab-5">
                 <div class="row gy-4">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Est eveniet ipsam sindera pad rone matrelat sando reda</h3>
-                    <p class="fst-italic">Omnis blanditiis saepe eos autem qui sunt debitis porro quia.</p>
-                    <p>Exercitationem nostrum omnis. Ut reiciendis repudiandae minus. Omnis recusandae ut non quam ut quod eius qui. Ipsum quia odit vero atque qui quibusdam amet. Occaecati sed est sint aut vitae molestiae voluptate vel</p>
+                    <h3>An ophthalmologist is a physician who specializes in eye care.</h3>
+                    <p class="fst-italic">is a surgical subspecialty within medicine that deals with the diagnosis and treatment of eye disorders
+                      Ophthalmologists prescribe medications to treat eye diseases, implement laser therapy, and perform surgery when needed.</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
                     <img src="assets/img/departments-5.jpg" alt="" class="img-fluid">
@@ -345,55 +340,57 @@ session_start();
 
         <div class="section-title">
           <h2>Frequently Asked Questions</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 
         <div class="faq-list">
           <ul>
             <li data-aos="fade-up">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">Non consectetur a erat nam at lectus urna duis? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">Do I need to book an appointment to see a doctor? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
                 <p>
-                  Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                  In order to see Physician, you must book an appointment with his by utilizing our Online Booking option, by phone, or in person.
                 </p>
               </div>
             </li>
 
             <li data-aos="fade-up" data-aos-delay="100">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">Feugiat scelerisque varius morbi enim nunc? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">Why is it important to ensure that I keep my appointment with my Physician?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
                 <p>
-                  Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                  Our Physicians work very hard to be available to see you as their patient. Please remember that if you do not keep your appointment and do not call to cancel/reschedule, that appointment time becomes unavailable for another sick patient that could have been accommodated.
                 </p>
               </div>
             </li>
 
             <li data-aos="fade-up" data-aos-delay="200">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">Dolor sit amet consectetur adipiscing elit? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">Can I post/send a message on Western Medical Clinic Facebook page and expect an answer?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
                 <p>
-                  Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+                  Please be aware that for confidentiality purposes, we are unable to answer questions/messages that appear on our Facebook page.
                 </p>
               </div>
             </li>
-
-            <li data-aos="fade-up" data-aos-delay="300">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <li data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">How do I edit information on my Online Clinic booking account?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
                 <p>
-                  Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in.
+                  If you have questions regarding your (Online Clinic) booking account, please contact the clinic by email at almasarwazaid@gmail.com.
                 </p>
               </div>
-            </li>
+              </li>
 
-            <li data-aos="fade-up" data-aos-delay="400">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque.
-                </p>
-              </div>
-            </li>
+              <li data-aos="fade-up" data-aos-delay="400">
+                <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed"> Why do my appointments feel so short?
+                  <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                  <p>
+                    (Online Clinic) limits us to a certain time period per appointment. Our doctors care for you and try their best to give the best care to patients, but please note that we are limited in time. You are always welcome to book appointments as often as you like.
+                  </p>
+                </div>
+              </li>
 
           </ul>
         </div>
@@ -407,7 +404,7 @@ session_start();
 
         <div class="section-title">
           <h2>Gallery</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h3>Pictures in our clinics</h3>
         </div>
       </div>
 
@@ -489,12 +486,12 @@ session_start();
 
         <div class="section-title">
           <h2>Contact</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h3>Our location on the map</h3>
         </div>
       </div>
 
       <div>
-        <iframe style="border:0; width: 100%; height: 350px;"  src="https://maps.google.com/maps?q=amman&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" frameborder="0" allowfullscreen></iframe>
+        <iframe style="border:0; width: 100%; height: 350px;" src="https://maps.google.com/maps?q=amman&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" frameborder="0" allowfullscreen></iframe>
       </div>
 
       <div class="container">
@@ -503,28 +500,29 @@ session_start();
           <div class="col-lg-4">
             <div class="info">
               <div class="address">
-                <i class="bi bi-geo-alt"></i>
+                <i class="bi bi-geo-alt" ></i>
+                
                 <h4>Location:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <p>amman</p>
               </div>
 
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <p>info@example.com</p>
+                <p>onlineclinic@ru.com</p>
               </div>
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Call:</h4>
-                <p>+1 5589 55488 55s</p>
+                <p>+962 786707010</p>
               </div>
 
             </div>
 
           </div>
 
-          <div class="col-lg-8 mt-5 mt-lg-0">
+          <!-- <div class="col-lg-8 mt-5 mt-lg-0">
 
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="row">
@@ -551,7 +549,7 @@ session_start();
 
           </div>
 
-        </div>
+        </div> -->
 
       </div>
     </section><!-- End Contact Section -->
@@ -565,14 +563,11 @@ session_start();
 
       <div class="me-md-auto text-center text-md-start">
         <div class="copyright">
-          &copy; Copyright <strong><span>Medilab</span></strong>. All Rights Reserved
+          &copy; Copyright <strong><span>Online Clinic</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/ -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          
+          <!-- Designed by <a href="">BootstrapMade</a> -->
         </div>
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
