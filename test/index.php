@@ -1,3 +1,7 @@
+<?php
+include_once "connection.php";
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,8 +43,8 @@
   <div id="topbar" class="d-flex align-items-center fixed-top">
     <div class="container d-flex justify-content-between">
       <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">onlineclinik@gmail.com</a>
-        <i class="bi bi-phone"></i> +962 786707010
+        <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com"><?php echo $_SESSION["Email"] ?></a>
+        <i class="bi bi-phone"></i> <?php echo $_SESSION["Phone"]; ?>
       </div>
       <div class="d-none d-lg-flex social-links align-items-center">
         <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
@@ -65,8 +69,8 @@
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#departments">Departments</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="nav-link scrollto" href="login.html">Login</a></li>
-          <li><a class="nav-link scrollto" href="sign_up.html">Sign Up</a></li>
+          <li><a class="nav-link scrollto" href="login.php">Login</a></li>
+          <li><a class="nav-link scrollto" href="sign_up.php">Sign Up</a></li>
         </ul>
         <!-- mobile header -->
         <i class="bi bi-list mobile-nav-toggle"></i>
