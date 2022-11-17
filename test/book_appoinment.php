@@ -130,7 +130,7 @@
                 <div class="validate"></div>
               </div>
               <div class="col-md-4 form-group mt-3">
-                <select name="doctor" id="doctor" class="form-select">
+                <select name="clinic" id="clinic" class="form-select">
                   <option value="">Search by speciality, treatment, case...</option>
                   <option value="clinic 1"> Ear Nose and Throat </option>
                   <option value="clinic 2">Gynecology and Infertility</option>
@@ -175,7 +175,7 @@
               </div>
             </div>
             <div class="col-md-4 form-group ">
-              <input type="number" name=" Your Age" class="form-control" id="Age" placeholder="patient's age" data-rule="minlen:4" data-msg="Please enter at least 4 chars" min="1" max="110">
+              <input type="number" name="patient's age" class="form-control" id="Age" placeholder="patient's age" data-rule="minlen:4" data-msg="Please enter at least 4 chars" min="1" max="110">
               <div class="validate"></div>
             </div>
   
