@@ -6,10 +6,10 @@
   <title>Medilab Bootstrap Template - Index</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-
+  
   <!-- Favicons -->
   <link href="./images/O N L I N E.jpg" rel="icon">
-  
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
@@ -29,6 +29,7 @@
   <!-- =======================================================
   * Template Name: Online Clinic.
   ======================================================== -->
+  
 </head>
 
 <body>
@@ -96,53 +97,97 @@
                 <div class="validate"></div>
               </div>
             </div>
-            <div class="col-md-4 form-group">
-              <input type="number" name=" Your Age" class="form-control" id="Age" placeholder="" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+            <!-- <div class="col-md-4 form-group ">
+              <input type="number" name=" Your Age" class="form-control" id="Age" placeholder="patient's age" data-rule="minlen:4" data-msg="Please enter at least 4 chars" min="1" max="110">
               <div class="validate"></div>
-            </div>
-            <!-- <div class="row">
+            </div> -->
+            <!-- <form action="/action_page.php">
+              <label for="birthday">Birthday:</label>
+              <input type="date" id="birthday" name="birthday">
+              <input type="submit">
+            </form> -->
+            <div class="row">
               <div class="col-md-4 form-group mt-3">
                 <input type="datetime" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
                 <div class="validate"></div>
-              </div> -->
+              </div>
               <div class="col-md-4 form-group mt-3">
                 <select name="Location" id="Location" class="form-select">
                   <option value="">Location</option>
-                  <option value="Department 1">Irbid</option>
-                  <option value="Department 2">Ajloun</option>
-                  <option value="Department 3">Jerash</option>
-                  <option value="Department 4">Mafraq</option>
-                  <option value="Department 5">Balqa</option>
-                  <option value="Department 6">Amman</option>
-                  <option value="Department 7">Zarqa</option>
-                  <option value="Department 8">Madaba</option>
-                  <option value="Department 9">Alkarak</option>
-                  <option value="Department 10">Tafilah</option>
-                  <option value="Department 11">Ma'an</option>
-                  <option value="Department 12">Aqaba</option>
+                  <option value="1">Irbid</option>
+                  <option value="2">Ajloun</option>
+                  <option value="3">Jerash</option>
+                  <option value="4">Mafraq</option>
+                  <option value="5">Balqa</option>
+                  <option value="6">Amman</option>
+                  <option value="7">Zarqa</option>
+                  <option value="8">Madaba</option>
+                  <option value="9">Alkarak</option>
+                  <option value="10">Tafilah</option>
+                  <option value="11">Ma'an</option>
+                  <option value="12">Aqaba</option>
                 </select>
                 <div class="validate"></div>
               </div>
               <div class="col-md-4 form-group mt-3">
                 <select name="doctor" id="doctor" class="form-select">
-                  <option value="">Select Doctor</option>
-                  <option value="Doctor 1">Doctor 1</option>
-                  <option value="Doctor 2">Doctor 2</option>
-                  <option value="Doctor 3">Doctor 3</option>
+                  <option value="">Search by speciality, treatment, case...</option>
+                  <option value="clinic 1"> Ear Nose and Throat </option>
+                  <option value="clinic 2">Gynecology and Infertility</option>
+                  <option value="clinic 3">Orthopedic and Fracture Surgery</option>
+                  <option value="clinic 4">Dermatology and Venereology</option>
+                  <option value="clinic 5">Internal Medicin</option>
+                  <option value="clinic 6">Ophthalmology</option>
+                  <option value="clinic 7">Urology</option>
+                  <option value="clinic 8">Psychiatry</option>
+                  <option value="clinic 9">Cosmetic Dermatology and Laser</option>
+                  <option value="clinic 10">IVF and Infertility</option>
+                  <option value="clinic 11">Pediatrics and New Born</option>
+                  <option value="clinic 12">Cardiology</option>
+                  <option value="clinic 13">Gastroenterology and Endoscopy</option>
+                  <option value="clinic 14">Neurology</option>
+                  <option value="clinic 15">Pulmonology</option>
+                  <option value="clinic 16">Dietitian and Nutrition</option>
+                  <option value="clinic 17">Andrology and Male Infertility</option>
+                  <option value="clinic 18">General Surgery</option>
+                  <option value="clinic 19">Liver Disease</option>
+                  <option value="clinic 20">Spine Surgery</option>
+                  <option value="clinic 21">Diabetes and Endocrinology</option>
+                  <option value="clinic 22">Nephrology</option>
+                  <option value="clinic 23">Obesity and Laparoscopic Surgery</option>
+                  <option value="clinic 24">Neurosurgery</option>
+                  <option value="clinic 25">Vascular Surgery</option>
+                  <option value="clinic 26">Rheumatology</option>
+                  <option value="clinic 27">Plastic and Reconstructive Surgery</option>
+                  <option value="clinic 28">Allergy and Immunology</option>
+                  <option value="clinic 29">General Practice</option>
+                  <option value="clinic 30">Family Medicine</option>
+                  <option value="clinic 31">Pediatric Surgery</option>
+                  <option value="clinic 32">Cardiac Surgery</option>
+                  <option value="clinic 33">Hematology</option>
+                  <option value="clinic 34">Pain Management</option>
+                  <option value="clinic 35">Physiotherapy</option>
+                  <option value="clinic 36">Oncology</option>
+                  <option value="clinic 36">Radiology</option>
+                  
                 </select>
                 <div class="validate"></div>
               </div>
+            </div>
+            <div class="col-md-4 form-group ">
+              <input type="number" name=" Your Age" class="form-control" id="Age" placeholder="patient's age" data-rule="minlen:4" data-msg="Please enter at least 4 chars" min="1" max="110">
+              <div class="validate"></div>
             </div>
   
             <div class="form-group mt-3">
               <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
               <div class="validate"></div>
             </div>
-            <div class="mb-3">
+            <!-- <div class="mb-3">
               <div class="loading">Loading</div>
               <div class="error-message"></div>
               <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
-            </div>
+            </div> -->
             <div class="text-center"><button type="submit">Make an Appointment</button></div>
           </form>
   
@@ -156,15 +201,9 @@
 
       <div class="me-md-auto text-center text-md-start">
         <div class="copyright">
-          &copy; Copyright <strong><span>Medilab</span></strong>. All Rights Reserved
+          &copy; Copyright <strong><span>Online Clinic</span></strong>. All Rights Reserved
         </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/ -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        </div>
+        
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>

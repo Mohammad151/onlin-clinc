@@ -1,13 +1,4 @@
-/**
-* Template Name: Medilab - v4.9.1
-* Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
@@ -219,7 +210,7 @@ h6 {
 }
 
 .appointment-btn:hover {
-  background: #166ab5;
+  background: #3AB19B;
   color: #fff;
 }
 
@@ -909,6 +900,7 @@ section {
 }
 
 .appointment .php-email-form .form-group {
+  
   padding-bottom: 8px;
 }
 
@@ -941,6 +933,7 @@ section {
   padding: 15px;
   font-weight: 600;
 }
+
 
 .appointment .php-email-form .loading {
   display: none;
@@ -1287,7 +1280,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: #1c84e3;
+  background: #3AB19B;
 }
 
 @-webkit-keyframes animate-loading {
