@@ -1341,3 +1341,6 @@ section {
 .container.d-flex.align-items-center{
   height: 50px;
 }
+.toggelshow1,.toggelshow2,.toggelshow3{
+  height: fit-content;
+}

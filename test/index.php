@@ -35,6 +35,8 @@ session_start();
   <!-- =======================================================
   * Template Name: Online Clinic
   ======================================================== -->
+
+
 </head>
 
 <body>
@@ -43,8 +45,15 @@ session_start();
   <div id="topbar" class="d-flex align-items-center fixed-top">
     <div class="container d-flex justify-content-between">
       <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com"><?php echo $_SESSION["Email"] ?></a>
-        <i class="bi bi-phone"></i> <?php echo $_SESSION["Phone"]; ?>
+        <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com"> <?php
+        if(isset($_SESSION["Email"])){
+          echo $_SESSION["Email"];
+        } ?></a>
+        <i class="bi bi-phone"></i>
+         <?php
+        if(isset($_SESSION["Phone"])){
+          echo $_SESSION["Phone"];
+        } ?>
       </div>
       <div class="d-none d-lg-flex social-links align-items-center">
         <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
@@ -69,14 +78,14 @@ session_start();
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#departments">Departments</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="nav-link scrollto" href="login.php">Login</a></li>
-          <li><a class="nav-link scrollto" href="sign_up.php">Sign Up</a></li>
+          <li><a class="nav-link scrollto" target="_blank" href="login.php">Login</a></li>
+          <li><a class="nav-link scrollto" target="_blank" href="sign_up.php">Sign Up</a></li>
         </ul>
         <!-- mobile header -->
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <a href="book_appoinment.php" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
+      <a href="book_appoinment.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
 
     </div>
   </header><!-- End Header -->
@@ -103,31 +112,33 @@ session_start();
                 It has a lot of options and has a lot of advantages such as:
               </p>
               <div class="text-center">
-                <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+                <a href="#about" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
               </div>
             </div>
           </div>
+
           <div class="col-lg-8 d-flex align-items-stretch">
             <div class="icon-boxes d-flex flex-column justify-content-center">
               <div class="row">
-                <div class="col-xl-4 d-flex align-items-stretch">
+                <div class="col-xl-4 d-flex align-items-stretch toggelshow1">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bi bi-hourglass-split"></i>
                     <h4>1. saves time</h4>
-                    <p>It ensures that patients do not have to wait for long periods in a crowded waiting room.Doctor visits become less messy and more planned, which saves patients time.This in turn improves patient satisfaction and ensures their long-term loyalty.</p>
+                    <p class="toggels1">It ensures that patients do not have to wait for long periods in a crowded waiting room.Doctor visits become less messy and more planned, which saves patients time.This in turn improves patient satisfaction and ensures their long-term loyalty.</p>
                   </div>
                 </div>
-                <div class="col-xl-4 d-flex align-items-stretch">
+                <div class="col-xl-4 d-flex align-items-stretch toggelshow2">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bi bi-people-fill"></i>
                     <h4>2. Increases turnout with automated appointment reminders</h4>
-                    <p>People often forget. There are many cases where patients schedule appointments and completely forget about them. So when a patient books a doctor's appointment, clinics spend long periods of time ensuring patients don't miss their appointment at the last minute. However, when a clinics uses an online appointment booking system, it can send automated reminders and notifications and eliminate the entire manual process.</p>
+                    <p class="toggels2">People often forget. There are many cases where patients schedule appointments and completely forget about them. So when a patient books a doctor's appointment, clinics spend long periods of time ensuring patients don't miss their appointment at the last minute. However, when a clinics uses an online appointment booking system, it can send automated reminders and notifications and eliminate the entire manual process.</p>
                   </div>
                 </div>
-                <div class="col-xl-4 d-flex align-items-stretch">
+                <div class="col-xl-4 d-flex align-items-stretch toggelshow3">
                   <div class="icon-box mt-4 mt-xl-0">
-                  <i class="bi bi-box-fill"></i>                    <h4>3. Ensures better allocation of resources</h4>
-                    <p>The traditional appointment scheduling process requires a lot of time and resources. The receptionist must check the availability of doctors, manually fill in all patient details, and remind patients of their appointment. This is a time consuming process and may not be completely flawless. Therefore, human error can easily be minimized by choosing an online appointment scheduling system. This system automates the entire process, saves time and reduces the burden on employees.</p>
+                  <i class="bi bi-box-fill"></i>                  
+                    <h4>3. Ensures better allocation of resources</h4>
+                    <p class="toggels3">The traditional appointment scheduling process requires a lot of time and resources. The receptionist must check the availability of doctors, manually fill in all patient details, and remind patients of their appointment. This is a time consuming process and may not be completely flawless. Therefore, human error can easily be minimized by choosing an online appointment scheduling system. This system automates the entire process, saves time and reduces the burden on employees.</p>
                   </div>
                 </div>
               </div>
@@ -495,27 +506,34 @@ session_start();
       </div>
 
       <div class="container">
-        <div class="row mt-5">
+        <div class="row mt-5 contact">
 
           <div class="col-lg-4">
             <div class="info">
               <div class="address">
                 <i class="bi bi-geo-alt" ></i>
-                
                 <h4>Location:</h4>
                 <p>amman</p>
               </div>
-
-              <div class="email">
+            </div>
+          </div>
+              <div class="col-lg-4">
+              <div class="info">
+              <div class="address">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <p>onlineclinic@ru.com</p>
+                <p><a href = "mailto: onlineclinic@ru.com">onlineclinic@ru.com</a></p>
               </div>
-
-              <div class="phone">
+              </div>
+              </div>
+              <div class="col-lg-4">
+              <div class="info">
+              <div class="address">
                 <i class="bi bi-phone"></i>
                 <h4>Call:</h4>
-                <p>+962 786707010</p>
+                <p><a href="tel:+962786707010">+962 786707010</a></p>
+              </div>
+              </div>
               </div>
 
             </div>
@@ -596,3 +614,18 @@ session_start();
 </body>
 
 </html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+   $(".toggels1").hide();
+   $(".toggels2").hide();
+   $(".toggels3").hide();
+$( ".toggelshow1" ).click(function() {
+  $(".toggels1").show();
+});
+$( ".toggelshow2" ).click(function() {
+  $(".toggels2").show();
+});
+$( ".toggelshow3" ).click(function() {
+  $(".toggels3").show();
+});
+</script>

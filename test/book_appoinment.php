@@ -30,6 +30,11 @@
   * Template Name: Online Clinic.
   ======================================================== -->
   
+  <style>
+    input.form-control,select.form-select{
+      max-width: 415px;
+    }
+    </style>
 </head>
 
 <body>
@@ -174,8 +179,8 @@
                 <div class="validate"></div>
               </div>
             </div>
-            <div class="col-md-4 form-group ">
-              <input type="number" name="patient's age" class="form-control" id="Age" placeholder="patient's age" data-rule="minlen:4" data-msg="Please enter at least 4 chars" min="1" max="110">
+            <div class="col-md-4 form-group mt-3">
+              <input type="number" name="patient age" class="form-control" id="Age" placeholder="patient's age" data-rule="minlen:4" data-msg="Please enter at least 4 chars" min="1" max="110">
               <div class="validate"></div>
             </div>
   
