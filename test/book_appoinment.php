@@ -178,11 +178,12 @@
                 </select>
                 <div class="validate"></div>
               </div>
-            </div>
-            <div class="col-md-4 form-group mt-3">
-              <input type="number" name="patient age" class="form-control" id="Age" placeholder="patient's age" data-rule="minlen:4" data-msg="Please enter at least 4 chars" min="1" max="110">
+              <div class="col-md-4 form-group mt-3">
+              <input type="number" name="patient age" class="form-control" id="Age" placeholder="patient's age" data-msg="Please enter at least 4 chars" min="1" max="110">
               <div class="validate"></div>
             </div>
+            </div>
+        
   
             <div class="form-group mt-3">
               <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
