@@ -45,15 +45,15 @@ session_start();
   <div id="topbar" class="d-flex align-items-center fixed-top">
     <div class="container d-flex justify-content-between">
       <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com"> <?php
-        if(isset($_SESSION["Email"])){
-          echo $_SESSION["Email"];
-        } ?></a>
-        <i class="bi bi-phone"></i>
-         <?php
-        if(isset($_SESSION["Phone"])){
-          echo $_SESSION["Phone"];
+      <i class="fa-solid fa-user"></i> <?php
+        if(isset($_SESSION["Name"])){
+          echo $_SESSION["Name"];
         } ?>
+        <!-- <i class="bi bi-phone"></i>
+         <?php
+        // if(isset($_SESSION["Phone"])){
+        //   echo $_SESSION["Phone"];
+        //} ?> -->
       </div>
       <div class="d-none d-lg-flex social-links align-items-center">
         <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
@@ -68,7 +68,7 @@ session_start();
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html"><img src="images/logo.gif"></a></h1>
+      <h1 class="logo me-auto"><a href="index.php"><img src="images/logo.gif"></a></h1>
 
 
 
@@ -78,14 +78,29 @@ session_start();
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#departments">Departments</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="nav-link scrollto" target="_blank" href="login.php">Login</a></li>
-          <li><a class="nav-link scrollto" target="_blank" href="sign_up.php">Sign Up</a></li>
+          <?php
+          
+          if ( !isset($_SESSION["Name"])){
+          echo'<li><a class="nav-link scrollto" href="login.php">Login</a></li>';
+          echo'<li><a class="nav-link scrollto" href="sign_up.php">Sign Up</a></li>';
+        }
+          else{
+            echo'<li><a class="nav-link scrollto" href="logout.php">log out</a></li>';
+          }
+          ?>
+
+
+          
         </ul>
         <!-- mobile header -->
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-
-      <a href="book_appoinment.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
+<?php
+ if ( isset($_SESSION["Name"])){ ?>
+      <a href="forms/book_appoinment.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
+<?php }else{ ?>
+  <a href="login.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
+<?php  } ?>
 
     </div>
   </header><!-- End Header -->
@@ -120,24 +135,27 @@ session_start();
           <div class="col-lg-8 d-flex align-items-stretch">
             <div class="icon-boxes d-flex flex-column justify-content-center">
               <div class="row">
-                <div class="col-xl-4 d-flex align-items-stretch toggelshow1">
+                <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bi bi-hourglass-split"></i>
                     <h4>1. saves time</h4>
+                    <i class="bi bi-caret-down-square-fill  toggelshow1"></i>
                     <p class="toggels1">It ensures that patients do not have to wait for long periods in a crowded waiting room.Doctor visits become less messy and more planned, which saves patients time.This in turn improves patient satisfaction and ensures their long-term loyalty.</p>
                   </div>
                 </div>
-                <div class="col-xl-4 d-flex align-items-stretch toggelshow2">
+                <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bi bi-people-fill"></i>
                     <h4>2. Increases turnout with automated appointment reminders</h4>
+                    <i class="bi bi-caret-down-square-fill toggelshow2"></i>
                     <p class="toggels2">People often forget. There are many cases where patients schedule appointments and completely forget about them. So when a patient books a doctor's appointment, clinics spend long periods of time ensuring patients don't miss their appointment at the last minute. However, when a clinics uses an online appointment booking system, it can send automated reminders and notifications and eliminate the entire manual process.</p>
                   </div>
                 </div>
-                <div class="col-xl-4 d-flex align-items-stretch toggelshow3">
+                <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box mt-4 mt-xl-0">
                   <i class="bi bi-box-fill"></i>                  
                     <h4>3. Ensures better allocation of resources</h4>
+                    <i class="bi bi-caret-down-square-fill  toggelshow3"></i>
                     <p class="toggels3">The traditional appointment scheduling process requires a lot of time and resources. The receptionist must check the availability of doctors, manually fill in all patient details, and remind patients of their appointment. This is a time consuming process and may not be completely flawless. Therefore, human error can easily be minimized by choosing an online appointment scheduling system. This system automates the entire process, saves time and reduces the burden on employees.</p>
                   </div>
                 </div>
@@ -620,12 +638,18 @@ session_start();
    $(".toggels2").hide();
    $(".toggels3").hide();
 $( ".toggelshow1" ).click(function() {
-  $(".toggels1").show();
+  $(".toggels1").toggle();
 });
 $( ".toggelshow2" ).click(function() {
-  $(".toggels2").show();
+  $(".toggels2").toggle();
 });
 $( ".toggelshow3" ).click(function() {
-  $(".toggels3").show();
+  $(".toggels3").toggle();
 });
+// function arrow(){
+
+//   document.getElementById("arrow").innerHTML="<i class='bi bi-caret-up-square-fill'></i>";
+//   document.getElementById("arrow").hide();
+// 
+//  save time : id="arrow" onclick="arrow()}
 </script>

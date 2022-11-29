@@ -16,6 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
       $_SESSION["Name"] = $row["Name"];
       $_SESSION["Email"] = $row["Email"];
       $_SESSION["Phone"] = $row["phone"];
+      $_SESSION["NavToggle"] = 1;
 
       echo "<script>window.location.href='index.php';</script>";
    }else{
