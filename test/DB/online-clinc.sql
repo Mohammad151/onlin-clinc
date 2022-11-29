@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2022 at 10:16 AM
+-- Generation Time: Nov 29, 2022 at 12:00 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -28,16 +28,24 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `appointment` (
-  `Name` varchar(255) NOT NULL,
-  `Relative Relation` varchar(255) NOT NULL,
+  `FName` varchar(255) NOT NULL,
+  `Realitive_Realation` varchar(255) NOT NULL,
   `phone` varchar(15) NOT NULL,
-  `date` datetime(6) NOT NULL,
-  `Location` varchar(255) NOT NULL,
+  `history` time(6) DEFAULT NULL,
+  `Place` varchar(255) NOT NULL,
   `clinic` varchar(255) NOT NULL,
-  `patient's age` int(5) NOT NULL,
-  `message` int(255) DEFAULT NULL,
+  `patient_age` int(5) NOT NULL,
+  `message_sent` int(255) DEFAULT NULL,
   `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `appointment`
+--
+
+INSERT INTO `appointment` (`FName`, `Realitive_Realation`, `phone`, `history`, `Place`, `clinic`, `patient_age`, `message_sent`, `email`) VALUES
+('nmnkjkj', 'kjjnjkkkk', '5888888', NULL, '15', '8', 0, 0, ''),
+('nmnkjkj', 'kjjnjkkkk', '5888888', NULL, '15', '8', 0, 0, '');
 
 -- --------------------------------------------------------
 
