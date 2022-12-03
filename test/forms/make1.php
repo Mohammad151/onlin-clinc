@@ -95,27 +95,28 @@ session_start();
             <h2>Make an Appointments</h2>
             
             <p>Book with the best doctors and clinics in Jordan now</p>
+            <p>Choose your location and the specialty of the clinic you want</p>
 
           </div>
-          <form action="Appointment1.php" method="post" role="form" class="php-email-form">
+          <form action="make11.php" method="post" role="form" class="php-email-form">
             <div class="row">
-              <div class="col-md-4 form-group">
+              <!-- <div class="col-md-4 form-group">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
                 <div class="validate"></div>
-              </div>
-              <div class="col-md-4 form-group">
+              </div> -->
+              <!-- <div class="col-md-4 form-group">
                 <input type="text" name="Relative_Relation" class="form-control" id="Relative Relation" placeholder="Relative Relation" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
                 <div class="validate"></div>
-              </div>
+              </div> -->
               <!-- <div class="col-md-4 form-group mt-3 mt-md-0">
                 <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
                 <div class="validate"></div>
               </div> -->
-              <div class="col-md-4 form-group mt-3 mt-md-0">
+              <!-- <div class="col-md-4 form-group mt-3 mt-md-0">
                 <input type="tel" class="form-control" name="phone" id="phone" placeholder="Your Phone" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
                 <div class="validate"></div>
               </div>
-            </div>
+            </div> -->
             <!-- <div class="col-md-4 form-group ">
               <input type="number" name=" Your Age" class="form-control" id="Age" placeholder="patient's age" data-rule="minlen:4" data-msg="Please enter at least 4 chars" min="1" max="110">
               <div class="validate"></div>
@@ -125,26 +126,26 @@ session_start();
               <input type="date" id="birthday" name="birthday">
               <input type="submit">
             </form> -->
-            <div class="row">
+            <!-- <div class="row">
               <div class="col-md-4 form-group mt-3">
                 <input type="time" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
                 <div class="validate"></div>
-              </div>
+              </div> -->
               <div class="col-md-4 form-group mt-3">
                 <select name="location" id="Location" class="form-select">
                   <option value="">Location</option>
-                  <option value="1">Irbid</option>
-                  <option value="2">Ajloun</option>
-                  <option value="3">Jerash</option>
-                  <option value="4">Mafraq</option>
-                  <option value="5">Balqa</option>
-                  <option value="6">Amman</option>
-                  <option value="7">Zarqa</option>
-                  <option value="8">Madaba</option>
-                  <option value="9">Alkarak</option>
-                  <option value="10">Tafilah</option>
-                  <option value="11">Ma'an</option>
-                  <option value="12">Aqaba</option>
+                  <option value="Irbid">Irbid</option>
+                  <option value="Ajloun">Ajloun</option>
+                  <option value="Jerash">Jerash</option>
+                  <option value="Mafraq">Mafraq</option>
+                  <option value="Balqa">Balqa</option>
+                  <option value="Amman">Amman</option>
+                  <option value="Zarqa">Zarqa</option>
+                  <option value="Madaba">Madaba</option>
+                  <option value="Alkarak">Alkarak</option>
+                  <option value="Tafilah">Tafilah</option>
+                  <option value="Ma'an">Ma'an</option>
+                  <option value="Aqaba">Aqaba</option>
                 </select>
                 <div class="validate"></div>
               </div>
@@ -192,23 +193,23 @@ session_start();
                 </select>
                 <div class="validate"></div>
               </div>
-              <div class="col-md-4 form-group mt-3">
+              <!-- <div class="col-md-4 form-group mt-3">
               <input type="number" name="patient_age" class="form-control" id="Age" placeholder="patient's age" data-msg="Please enter at least 4 chars" min="1" max="110">
               <div class="validate"></div>
-            </div>
+            </div> -->
             </div>
         
   
-            <div class="form-group mt-3">
+            <!-- <div class="form-group mt-3">
               <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
               <div class="validate"></div>
-            </div>
+            </div> -->
             <!-- <div class="mb-3">
               <div class="loading">Loading</div>
               <div class="error-message"></div>
               <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
             </div> -->
-            <button type="submit" class="mx-auto d-block">Make an Appointment</button>
+            <button type="submit" class="mx-auto d-block">Show results</button>
           </form>
         </div>
       </section><!-- End Appointment Section -->

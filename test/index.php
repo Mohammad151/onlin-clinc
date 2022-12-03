@@ -97,7 +97,8 @@ session_start();
       </nav><!-- .navbar -->
 <?php
  if ( isset($_SESSION["Name"])){ ?>
-      <a href="forms/book_appoinment.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
+       <a href="forms/make1.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
+      <!-- <a href="forms/book_appoinment.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a> -->
 <?php }else{ ?>
   <a href="login.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
 <?php  } ?>
