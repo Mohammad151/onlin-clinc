@@ -1,5 +1,6 @@
 <?php
-@include_once "connection.php";
+@include_once "../connection.php";
+@include_once "Appointment1.php";
 session_start();
 ?>
 <!DOCTYPE html>
@@ -42,6 +43,9 @@ session_start();
   <style>
     input.form-control,select.form-select{
       max-width: 415px;
+    }
+    .header{
+        margin-top: 75px;
     }
     </style>
 </head>
@@ -92,12 +96,12 @@ session_start();
         <div class="container">
 
           <div class="section-title">
-            <h2>Make an Appointments</h2>
+            <h2 class="header">Make an Appointments</h2>
             
             <p>Book with the best doctors and clinics in Jordan now</p>
 
           </div>
-          <form action="Appointment1.php" method="post" role="form" class="php-email-form">
+          <form action="" method="post" role="form" class="php-email-form">
             <div class="row">
               <div class="col-md-4 form-group">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
@@ -128,24 +132,6 @@ session_start();
             <div class="row">
               <div class="col-md-4 form-group mt-3">
                 <input type="time" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-                <div class="validate"></div>
-              </div>
-              <div class="col-md-4 form-group mt-3">
-                <select name="location" id="Location" class="form-select">
-                  <option value="">Location</option>
-                  <option value="1">Irbid</option>
-                  <option value="2">Ajloun</option>
-                  <option value="3">Jerash</option>
-                  <option value="4">Mafraq</option>
-                  <option value="5">Balqa</option>
-                  <option value="6">Amman</option>
-                  <option value="7">Zarqa</option>
-                  <option value="8">Madaba</option>
-                  <option value="9">Alkarak</option>
-                  <option value="10">Tafilah</option>
-                  <option value="11">Ma'an</option>
-                  <option value="12">Aqaba</option>
-                </select>
                 <div class="validate"></div>
               </div>
               <div class="col-md-4 form-group mt-3">
@@ -191,6 +177,32 @@ session_start();
                   
                 </select>
                 <div class="validate"></div>
+              </div>
+              <div class="col-md-4 form-group mt-3">
+                <select name="location" id="Location" class="form-select">
+                  <option value="">Location</option>
+                  <option value="1">Irbid</option>
+                  <option value="2">Ajloun</option>
+                  <option value="3">Jerash</option>
+                  <option value="4">Mafraq</option>
+                  <option value="5">Balqa</option>
+                  <option value="6">Amman</option>
+                  <option value="7">Zarqa</option>
+                  <option value="8">Madaba</option>
+                  <option value="9">Alkarak</option>
+                  <option value="10">Tafilah</option>
+                  <option value="11">Ma'an</option>
+                  <option value="12">Aqaba</option>
+                </select>
+                <div class="validate"></div>
+              </div>
+              <div class="col-md-4 form-group mt-3">
+                <select name="doctors" id="doctors" class="form-select">
+                <option value="">Search by Doctor name</option>
+                <option value="">Ahmad jjjj</option>
+                <option value="">Ahmad jjjj</option>
+                <option value="">Ahmad jjjj</option>
+                </select>
               </div>
               <div class="col-md-4 form-group mt-3">
               <input type="number" name="patient_age" class="form-control" id="Age" placeholder="patient's age" data-msg="Please enter at least 4 chars" min="1" max="110">
