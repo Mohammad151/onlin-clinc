@@ -1,5 +1,5 @@
 <?php
-include_once "connection.php";
+@include_once "connection.php";
 session_start();
 ?>
 <!DOCTYPE html>
@@ -106,50 +106,51 @@ session_start();
     <!-- ======= Appointment Section ======= -->
     <section id="appointment" class="appointment section-bg">
         <div class="container">
+
           <div class="section-title">
             <h2 class="header">List of Doctors</h2>
+        
+            
+
           </div>
-          <?php
-    $sql = "SELECT * FROM doctor";
-    $result = mysqli_query($conn, $sql);
-    $row =  mysqli_fetch_assoc($result);
-    foreach($row as $row1)
-    {
-    echo "
-          <form action='Appointment1.php' method='post' role='form' class='php-email-form'>
-            <div class='row'>
-            <div class='col-md-8' style='border:1px solid #3AB19B;display:inline-flex;'>
-            <div class='col-md-3 form-group'>
-               <img src='../images/user.png' style='width: 50%;'>
+          
+          <form action="Appointment1.php" method="post" role="form" class="php-email-form">
+            <div class="row">
+            <div class="col-md-8" style="border:1px solid #3AB19B;display:inline-flex;">
+            <div class="col-md-3 form-group">
+               <img src="../images/user.png" style="width: 50%;">
             </div>
-              <div class='col-md-4 form-group card'>
-                <p><i class='bi bi-person-circle' aria-hidden='true' style='color:#3AB19B;'></i>$row1[Name]</p>
-                <p><i class='fa fa-stethoscope' aria-hidden='true' style='color:#3AB19B;'></i> Dermatology and Venereology</p>
-                <p><i class='fa fa-map-marker' aria-hidden='true' style='color:#3AB19B;'></i>   Amman</p>
-                <p><i class='fa-solid fa-clock' style='color:#3AB19B;'></i>   Waiting Time :  15 - 20 </p>
-                <p><i class='fa-solid fa-eye' style='color:#3AB19B;'></i>     Views : 5030 </p>
-                <p style='padding-left:5px ;'><i class='fa fa-dollar-sign' style='color:#3AB19B;'></i>Fees : 20 JOD </p>
-                <p><i class='bi bi-telephone-fil' style='color:#3AB19B;'></i><a href='tel:+962786707010'>+962 786707010</a></p>
+              <div class="col-md-4 form-group card">
+                <p><i class="bi bi-person-circle" aria-hidden="true" style="color:#3AB19B;"></i> Ahmad Almasarwa</p>
+                <p><i class="fa fa-stethoscope" aria-hidden="true" style="color:#3AB19B;"></i> Dermatology and Venereology</p>
+                <p><i class="fa fa-map-marker" aria-hidden="true" style="color:#3AB19B;"></i>   Amman</p>
+                <p><i class="fa-solid fa-clock" style="color:#3AB19B;"></i>   Waiting Time :  15 - 20 </p>
+                <p><i class="fa-solid fa-eye" style="color:#3AB19B;"></i>     Views : 5030 </p>
+                <p style="padding-left:5px ;"><i class="fa fa-dollar-sign" style="color:#3AB19B;"></i>     Fees : 20 JOD </p>
+                <p><i class="bi bi-telephone-fill" style="color:#3AB19B;"></i><a href="tel:+962786707010">+962 786707010</a></p>
               </div>
-              <div class='col-md-2 form-group card'>
+              <div class="col-md-2 form-group card">
                 
               </div>
-              <div class='col-md-1 form-group'>
+              <div class="col-md-1 form-group">
+              <?php
+ if ( isset($_SESSION["Name"])){ ?>
+       <a href="book_appoinment.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
+      <!-- <a href="forms/book_appoinment.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a> -->
+<?php }else{ ?>
+  <a href="login.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
+<?php  } ?>
             </div>
               </div>
             </div>
-            <!-- <div class='mb-3'>
-              <div class='loading'>Loading</div>
-              <div class='error-message'></div>
-              <div class='sent-message'>Your appointment request has been sent successfully. Thank you!</div>
+            <!-- <div class="mb-3">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
             </div> -->
           </form>
         </div>
-        ";}
-        ?>
-        
       </section><!-- End Appointment Section -->
-
       
  <!-- ======= Footer ======= -->
  <footer id="footer">
