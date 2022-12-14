@@ -76,7 +76,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             </div>
       
             <div class="password input-cont">
-               <input type="password" class="input" placeholder="Password" name="password"/>
+               <input type="password" class="input" placeholder="Password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/>
                <div class="icon">
                   <i class="fas fa-lock"></i>
                </div>

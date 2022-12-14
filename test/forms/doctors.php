@@ -4,6 +4,7 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -27,39 +28,91 @@ session_start();
   <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
   <!-- Template Main CSS File -->
   <link href="../assets/css/style.css" rel="stylesheet">
 
-  
-    <!-- <link href="assets/css/style.css" rel="stylesheet"> -->
+
+  <!-- <link href="assets/css/style.css" rel="stylesheet"> -->
   <link rel="stylesheet" href="../assets/css/style.css">
 
   <!-- =======================================================
   * Template Name: Online Clinic.
   ======================================================== -->
-  
+
   <style>
-    input.form-control,select.form-select{
+    input.form-control,
+    select.form-select {
       max-width: 415px;
+      
     }
-    .card{
-        padding: 10px;
-        border: none;
+
+    .card {
+      padding: 10px;
+      border: none;
     }
-    .form-group{
-        background-color: transparent;
+
+    .form-group {
+      background-color: transparent;
     }
-    .appointment-btn.scrollto{
-        padding: 10px !important;
-        position: relative;
-        top: 35%;
-        width: 159px;
+
+    .appointment-btn.scrollto {
+      padding: 10px !important;
+      position: relative;
+      top: 85%;
+      width: 159px;
     }
-    .header{
-        margin-top: 75px;
+
+    .header {
+      margin-top: 75px;
     }
-    </style>
+.body{
+background: #222225;
+color: white;
+margin: 100px auto;
+}
+
+.rating {
+display: flex;
+flex-direction: row-reverse;
+justify-content: center;
+}
+
+.rating > input{
+ display:none;
+}
+
+.rating > label {
+position: relative;
+width: 1cm;
+font-size: 2.5vw;
+color: #FFD700;
+cursor: pointer;
+right: 1cm;
+bottom: 5px;
+
+}
+
+.rating > label::before{
+content: "\2605";
+position: absolute;
+opacity: 0;
+}
+
+.rating > label:hover:before,
+.rating > label:hover ~ label:before {
+opacity: 1 !important;
+}
+
+.rating > input:checked ~ label:before{
+opacity:1;
+}
+
+.rating:hover > input:checked ~ label:before{ 
+opacity: 0.4;
+ }
+  </style>
 </head>
 
 <body>
@@ -68,9 +121,9 @@ session_start();
   <div id="topbar" class="d-flex align-items-center fixed-top">
     <div class="container d-flex justify-content-between">
       <div class="contact-info d-flex align-items-center">
-      <i class="fa-solid fa-user"></i> 
-      <?php
-        if(isset($_SESSION["Name"])){
+        <i class="fa-solid fa-user"></i>
+        <?php
+        if (isset($_SESSION["Name"])) {
           echo $_SESSION["Name"];
         } ?>
         <!-- <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">contact@example.com</a>
@@ -90,7 +143,7 @@ session_start();
     <div class="container d-flex align-items-center">
 
       <h1 class="logo me-auto"><a href="../index.php"><img src="../images/logo.gif"></a></h1>
-      
+
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="nav-link scrollto" href="../index.php">Home</a></li>
@@ -102,58 +155,66 @@ session_start();
       </nav><!-- .navbar -->
     </div>
   </header><!-- End Header -->
-    
-    <!-- ======= Appointment Section ======= -->
-    <section id="appointment" class="appointment section-bg">
-        <div class="container">
 
-          <div class="section-title">
-            <h2 class="header">List of Doctors</h2>
-        
-            
+  <!-- ======= Appointment Section ======= -->
+  <section id="appointment" class="appointment section-bg">
+    <div class="container">
 
-          </div>
-          
-          <form action="Appointment1.php" method="post" role="form" class="php-email-form">
-            <div class="row">
-            <div class="col-md-8" style="border:1px solid #3AB19B;display:inline-flex;">
+      <div class="section-title">
+        <h2 class="header">List of Doctors</h2>
+
+
+
+      </div>
+
+      <form action="Appointment1.php" method="post" role="form" class="php-email-form">
+        <div class="row">
+          <div class="col-md-8" style="border:1px solid #3AB19B;display:inline-flex;">
             <div class="col-md-3 form-group">
-               <img src="../images/user.png" style="width: 50%;">
+              <img src="../images/user.png" style="width: 50%;">
             </div>
-              <div class="col-md-4 form-group card">
-                <p><i class="bi bi-person-circle" aria-hidden="true" style="color:#3AB19B;"></i> Ahmad Almasarwa</p>
-                <p><i class="fa fa-stethoscope" aria-hidden="true" style="color:#3AB19B;"></i> Dermatology and Venereology</p>
-                <p><i class="fa fa-map-marker" aria-hidden="true" style="color:#3AB19B;"></i>   Amman</p>
-                <p><i class="fa-solid fa-clock" style="color:#3AB19B;"></i>   Waiting Time :  15 - 20 </p>
-                <p><i class="fa-solid fa-eye" style="color:#3AB19B;"></i>     Views : 5030 </p>
-                <p style="padding-left:5px ;"><i class="fa fa-dollar-sign" style="color:#3AB19B;"></i>     Fees : 20 JOD </p>
-                <p><i class="bi bi-telephone-fill" style="color:#3AB19B;"></i><a href="tel:+962786707010">+962 786707010</a></p>
+            <div class="col-md-4 form-group card">
+              <h4><i class="bi bi-person-circle" aria-hidden="true" style="color:#3AB19B;"></i> Ahmad Almasarwa </h4>
+              
+              <div class="rating">
+                <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
+                <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
+                <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
+                <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
+                <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
               </div>
-              <div class="col-md-2 form-group card">
-                
-              </div>
-              <div class="col-md-1 form-group">
+              <p><i class="fa fa-stethoscope" aria-hidden="true" style="color:#3AB19B;"></i> Dermatology and Venereology</p>
+              <p><i class="fa fa-map-marker" aria-hidden="true" style="color:#3AB19B;"></i> Amman</p>
+              <p><i class="fa-solid fa-clock" style="color:#3AB19B;"></i> Waiting Time : 15 - 20 </p>
+              <p><i class="fa-solid fa-eye" style="color:#3AB19B;"></i> Views : 5030 </p>
+              <p style="padding-left:5px ;"><i class="fa fa-dollar-sign" style="color:#3AB19B;"></i> Fees : 20 JOD </p>
+              <p><i class="bi bi-telephone-fill" style="color:#3AB19B;"></i><a href="tel:+962786707010">+962 786707010</a></p>
+            </div>
+            <div class="col-md-2 form-group card">
+
+            </div>
+            <div class="col-md-1 form-group">
               <?php
- if ( isset($_SESSION["Name"])){ ?>
-       <a href="book_appoinment.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
-      <!-- <a href="forms/book_appoinment.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a> -->
-<?php }else{ ?>
-  <a href="login.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
-<?php  } ?>
+              if (isset($_SESSION["Name"])) { ?>
+                <a href="book_appoinment.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
+                <!-- <a href="forms/book_appoinment.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a> -->
+              <?php } else { ?>
+                <a href="login.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
+              <?php  } ?>
             </div>
-              </div>
-            </div>
-            <!-- <div class="mb-3">
+          </div>
+        </div>
+        <!-- <div class="mb-3">
               <div class="loading">Loading</div>
               <div class="error-message"></div>
               <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
             </div> -->
-          </form>
-        </div>
-      </section><!-- End Appointment Section -->
-      
- <!-- ======= Footer ======= -->
- <footer id="footer">
+      </form>
+    </div>
+  </section><!-- End Appointment Section -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
 
     <div class="container d-md-flex py-4">
 
@@ -161,7 +222,7 @@ session_start();
         <div class="copyright">
           &copy; Copyright <strong><span>Online Clinic</span></strong>. All Rights Reserved
         </div>
-        
+
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -172,7 +233,7 @@ session_start();
       </div>
     </div>
   </footer><!-- End Footer -->
-      
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
