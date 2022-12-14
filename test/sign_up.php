@@ -64,25 +64,25 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
          </p>
          <div class="input-form">
             <div class="name input-cont">
-               <input type="text" class="input" placeholder="Full name" name="name" />
+               <input type="text" class="input" placeholder="Full name" name="name" required/>
                <div class="icon">
                   <i class="fas fa-user"></i>
                </div>
             </div>
             <div class="email input-cont">
-               <input type="email" class="input" placeholder="contact@example.com" name="email"/>
+               <input type="email" class="input" placeholder="contact@example.com" name="email" require/>
                <div class="icon">
                   <i class="fas fa-envelope"></i>
                </div>
             </div>
             <div class="phone input-cont">
-               <input type="phone" class="input" placeholder="Telephone" name="phone"/>
+               <input type="phone" class="input" placeholder="Telephone" name="phone" required>
                <div class="icon">
                   <i class="fas fa-phone-square-alt"></i>
                </div>
             </div>
             <div class="password input-cont">
-               <input type="password" class="input" placeholder="Password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/>
+               <input type="password" class="input" placeholder="Password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                <div class="icon">
                   <i class="fas fa-lock"></i>
                </div>

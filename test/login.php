@@ -69,14 +69,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
          <div class="input-form">
          
             <div class="email input-cont">
-               <input type="email" class="input" placeholder="contact@example.com" name="email"/>
+               <input type="email" class="input" placeholder="contact@example.com" name="email" required/>
                <div class="icon">
                   <i class="fas fa-envelope"></i>
                </div>
             </div>
       
             <div class="password input-cont">
-               <input type="password" class="input" placeholder="Password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/>
+               <input type="password" class="input" placeholder="Password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required/>
                <div class="icon">
                   <i class="fas fa-lock"></i>
                </div>
