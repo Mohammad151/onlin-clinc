@@ -708,12 +708,12 @@ section {
   color: #3AB19B;
   margin-bottom: 30px;
 }
-
-.why-us .icon-boxes .icon-box h4 {
+/* .why-us .icon-boxes .icon-box h4 
+{
   font-size: 20px;
   font-weight: 700;
   margin: 0 0 30px 0;
-}
+} */
 
 .why-us .icon-boxes .icon-box p {
   font-size: 15px;
