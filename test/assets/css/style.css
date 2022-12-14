@@ -547,16 +547,19 @@ h6 {
 section {
   padding: 60px 0;
   overflow: hidden;
+  
 }
 
 .section-bg {
   background-color: #f1f7fd;
+  
   
 }
 
 .section-title {
   text-align: center;
   padding-bottom: 30px;
+  
 }
 
 .section-title h2 {
@@ -1345,3 +1348,4 @@ section {
 .toggelshow1,.toggelshow2,.toggelshow3{
   height: fit-content;
 }
+

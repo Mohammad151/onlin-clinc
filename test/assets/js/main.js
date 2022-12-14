@@ -184,6 +184,7 @@
   const galelryLightbox = GLightbox({
     selector: '.galelry-lightbox'
   });
+  
 
   /**
    * Testimonials slider

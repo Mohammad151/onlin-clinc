@@ -70,13 +70,12 @@ session_start();
 
       <h1 class="logo me-auto"><a href="index.php"><img src="images/logo.gif"></a></h1>
 
-
-
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#departments">Departments</a></li>
+          <li><a class="nav-link scrollto" href="forms/doctors.php">Doctors</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
           <?php
           

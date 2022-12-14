@@ -43,6 +43,9 @@ session_start();
     input.form-control,select.form-select{
       max-width: 415px;
     }
+    .header{
+        margin-top: 75px;
+    }
     </style>
 </head>
 
@@ -92,45 +95,14 @@ session_start();
         <div class="container">
 
           <div class="section-title">
-            <h2>Make an Appointments</h2>
-            
+
+          <h2 class="header">Search on Doctors</h2>
             <p>Book with the best doctors and clinics in Jordan now</p>
             <p>Choose your location and the specialty of the clinic you want</p>
 
           </div>
-          <form action="make11.php" method="post" role="form" class="php-email-form">
+          <form action="doctors.php" method="post" role="form" class="php-email-form">
             <div class="row">
-              <!-- <div class="col-md-4 form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-                <div class="validate"></div>
-              </div> -->
-              <!-- <div class="col-md-4 form-group">
-                <input type="text" name="Relative_Relation" class="form-control" id="Relative Relation" placeholder="Relative Relation" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-                <div class="validate"></div>
-              </div> -->
-              <!-- <div class="col-md-4 form-group mt-3 mt-md-0">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
-                <div class="validate"></div>
-              </div> -->
-              <!-- <div class="col-md-4 form-group mt-3 mt-md-0">
-                <input type="tel" class="form-control" name="phone" id="phone" placeholder="Your Phone" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-                <div class="validate"></div>
-              </div>
-            </div> -->
-            <!-- <div class="col-md-4 form-group ">
-              <input type="number" name=" Your Age" class="form-control" id="Age" placeholder="patient's age" data-rule="minlen:4" data-msg="Please enter at least 4 chars" min="1" max="110">
-              <div class="validate"></div>
-            </div> -->
-            <!-- <form action="/action_page.php">
-              <label for="birthday">Birthday:</label>
-              <input type="date" id="birthday" name="birthday">
-              <input type="submit">
-            </form> -->
-            <!-- <div class="row">
-              <div class="col-md-4 form-group mt-3">
-                <input type="time" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-                <div class="validate"></div>
-              </div> -->
               <div class="col-md-4 form-group mt-3">
                 <select name="location" id="Location" class="form-select">
                   <option value="">Location</option>
@@ -209,7 +181,9 @@ session_start();
               <div class="error-message"></div>
               <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
             </div> -->
-            <button type="submit" class="mx-auto d-block">Show results</button>
+            <br>
+            <br>
+            <p><button type="submit" class="mx-auto d-block">Show results  <i class="bi bi-search"></i></button></p>
           </form>
         </div>
       </section><!-- End Appointment Section -->

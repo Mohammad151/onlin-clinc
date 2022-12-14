@@ -20,7 +20,7 @@ $message = $_POST['message'];
 
 $stmt = $conn->prepare("INSERT INTO appointment(Fname,Realitive_Realation,phone,history,Place,clinic,patient_age,message_sent) VALUE (?,?,?,?,?,?,?,?)");
 $stmt->bind_param("ssisssis",$name,$Relative_Relation,$phone,$data,$patient_age,$location,$clinic,$message);
-$stmt->execute();
-echo "Succes";
+// $stmt->execute();
+// echo "Succes";
 }
 ?>
