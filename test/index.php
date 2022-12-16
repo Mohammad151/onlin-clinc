@@ -45,15 +45,16 @@ session_start();
   <div id="topbar" class="d-flex align-items-center fixed-top">
     <div class="container d-flex justify-content-between">
       <div class="contact-info d-flex align-items-center">
-      <i class="fa-solid fa-user"></i> <?php
-        if(isset($_SESSION["Name"])){
-          echo $_SESSION["Name"];
-        } ?>
+        <i class="fa-solid fa-user"></i> <?php
+                                          if (isset($_SESSION["Name"])) {
+                                            echo $_SESSION["Name"];
+                                          } ?>
         <!-- <i class="bi bi-phone"></i>
          <?php
-        // if(isset($_SESSION["Phone"])){
-        //   echo $_SESSION["Phone"];
-        //} ?> -->
+          // if(isset($_SESSION["Phone"])){
+          //   echo $_SESSION["Phone"];
+          //} 
+          ?> -->
       </div>
       <div class="d-none d-lg-flex social-links align-items-center">
         <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
@@ -73,34 +74,34 @@ session_start();
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="logindoctors.php"> Login Docotors</a></li>
+          <!-- <li><a class="nav-link scrollto" href="logindoctors.php"> Login Docotors</a></li> -->
           <li><a class="nav-link scrollto" href="#departments">Departments</a></li>
-          <li><a class="nav-link scrollto" href="forms/doctors.php">Doctors</a></li>
+          <!-- <li><a class="nav-link scrollto" href="forms/doctors.php">Doctors</a></li> -->
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
           <?php
-          
-          if ( !isset($_SESSION["Name"])){
-          echo'<li><a class="nav-link scrollto" href="login.php">Login</a></li>';
-          echo'<li><a class="nav-link scrollto" href="sign_up.php">Sign Up</a></li>';
-        }
-          else{
-            echo'<li><a class="nav-link scrollto" href="logout.php">log out</a></li>';
+
+          if (!isset($_SESSION["Name"])) {
+            echo '<li><a class="nav-link scrollto" href="login.php">Login</a></li>';
+            echo '<li><a class="nav-link scrollto" href="sign_up.php">Sign Up</a></li>';
+            echo '<li><a class="nav-link scrollto" href="logindoctors.php">Login Doctors</a></li>';
+          } else {
+            echo '<li><a class="nav-link scrollto" href="logout.php">log out</a></li>';
           }
           ?>
 
 
-          
+
         </ul>
         <!-- mobile header -->
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-<?php
- if ( isset($_SESSION["Name"])){ ?>
-       <a href="forms/make1.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
-      <!-- <a href="forms/book_appoinment.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a> -->
-<?php }else{ ?>
-  <a href="login.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
-<?php  } ?>
+      <?php
+      if (isset($_SESSION["Name"])) { ?>
+        <a href="forms/make1.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
+        <!-- <a href="forms/book_appoinment.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a> -->
+      <?php } else { ?>
+        <a href="login.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
+      <?php  } ?>
 
     </div>
   </header><!-- End Header -->
@@ -153,7 +154,7 @@ session_start();
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box mt-4 mt-xl-0">
-                  <i class="bi bi-box-fill"></i>                  
+                    <i class="bi bi-box-fill"></i>
                     <h4>3. Ensures better allocation of resources</h4>
                     <i class="bi bi-caret-down-square-fill  toggelshow3"></i>
                     <p class="toggels3">The traditional appointment scheduling process requires a lot of time and resources. The receptionist must check the availability of doctors, manually fill in all patient details, and remind patients of their appointment. This is a time consuming process and may not be completely flawless. Therefore, human error can easily be minimized by choosing an online appointment scheduling system. This system automates the entire process, saves time and reduces the burden on employees.</p>
@@ -401,7 +402,7 @@ session_start();
                 </p>
               </div>
             </li>
-              <li data-aos="fade-up" data-aos-delay="300">
+            <li data-aos="fade-up" data-aos-delay="300">
               <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">How do I edit information on my Online Clinic booking account?
                 <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
@@ -409,17 +410,17 @@ session_start();
                   If you have questions regarding your (Online Clinic) booking account, please contact the clinic by email at almasarwazaid@gmail.com.
                 </p>
               </div>
-              </li>
+            </li>
 
-              <li data-aos="fade-up" data-aos-delay="400">
-                <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed"> Why do my appointments feel so short?
-                  <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
-                  <p>
-                    (Online Clinic) limits us to a certain time period per appointment. Our doctors care for you and try their best to give the best care to patients, but please note that we are limited in time. You are always welcome to book appointments as often as you like.
-                  </p>
-                </div>
-              </li>
+            <li data-aos="fade-up" data-aos-delay="400">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed"> Why do my appointments feel so short?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  (Online Clinic) limits us to a certain time period per appointment. Our doctors care for you and try their best to give the best care to patients, but please note that we are limited in time. You are always welcome to book appointments as often as you like.
+                </p>
+              </div>
+            </li>
 
           </ul>
         </div>
@@ -529,36 +530,36 @@ session_start();
           <div class="col-lg-4">
             <div class="info">
               <div class="address">
-                <i class="bi bi-geo-alt" ></i>
+                <i class="bi bi-geo-alt"></i>
                 <h4>Location:</h4>
                 <p>amman</p>
               </div>
             </div>
           </div>
-              <div class="col-lg-4">
-              <div class="info">
+          <div class="col-lg-4">
+            <div class="info">
               <div class="address">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <p><a href = "mailto: onlineclinic@ru.com">onlineclinic@ru.com</a></p>
+                <p><a href="mailto: onlineclinic@ru.com">onlineclinic@ru.com</a></p>
               </div>
-              </div>
-              </div>
-              <div class="col-lg-4">
-              <div class="info">
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="info">
               <div class="address">
                 <i class="bi bi-phone"></i>
                 <h4>Call:</h4>
                 <p><a href="tel:+962786707010">+962 786707010</a></p>
               </div>
-              </div>
-              </div>
-
             </div>
-
           </div>
 
-          <!-- <div class="col-lg-8 mt-5 mt-lg-0">
+        </div>
+
+      </div>
+
+      <!-- <div class="col-lg-8 mt-5 mt-lg-0">
 
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="row">
@@ -602,7 +603,7 @@ session_start();
           &copy; Copyright <strong><span>Online Clinic</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
-          
+
           <!-- Designed by <a href="">BootstrapMade</a> -->
         </div>
       </div>
@@ -634,22 +635,22 @@ session_start();
 </html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
-   $(".toggels1").hide();
-   $(".toggels2").hide();
-   $(".toggels3").hide();
-$( ".toggelshow1" ).click(function() {
-  $(".toggels1").toggle();
-});
-$( ".toggelshow2" ).click(function() {
-  $(".toggels2").toggle();
-});
-$( ".toggelshow3" ).click(function() {
-  $(".toggels3").toggle();
-});
-// function arrow(){
+  $(".toggels1").hide();
+  $(".toggels2").hide();
+  $(".toggels3").hide();
+  $(".toggelshow1").click(function() {
+    $(".toggels1").toggle();
+  });
+  $(".toggelshow2").click(function() {
+    $(".toggels2").toggle();
+  });
+  $(".toggelshow3").click(function() {
+    $(".toggels3").toggle();
+  });
+  // function arrow(){
 
-//   document.getElementById("arrow").innerHTML="<i class='bi bi-caret-up-square-fill'></i>";
-//   document.getElementById("arrow").hide();
-// 
-//  save time : id="arrow" onclick="arrow()}
+  //   document.getElementById("arrow").innerHTML="<i class='bi bi-caret-up-square-fill'></i>";
+  //   document.getElementById("arrow").hide();
+  // 
+  //  save time : id="arrow" onclick="arrow()}
 </script>
