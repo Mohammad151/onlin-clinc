@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 16, 2022 at 12:54 PM
+-- Generation Time: Dec 16, 2022 at 06:27 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -58,20 +58,22 @@ CREATE TABLE `doctor` (
   `Pass` varchar(15) NOT NULL,
   `Name` varchar(255) NOT NULL,
   `specialty` varchar(255) NOT NULL,
-  `location` varchar(15) NOT NULL,
+  `location_Doc` varchar(15) NOT NULL,
   `Fees` int(10) NOT NULL,
   `id` int(20) NOT NULL,
   `Phone` varchar(10) NOT NULL,
-  `evaluation` int(5) NOT NULL DEFAULT 4
+  `evaluation` int(5) NOT NULL DEFAULT 4,
+  `img` varchar(255) NOT NULL DEFAULT '../images/user.png',
+  `Waiting_Time` varchar(20) NOT NULL DEFAULT '30'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `doctor`
 --
 
-INSERT INTO `doctor` (`Email`, `Pass`, `Name`, `specialty`, `location`, `Fees`, `id`, `Phone`, `evaluation`) VALUES
-('ahmadalmasarwa@email.com', 'Azazaz1212', ' Ahmad Almasarwa', ' Dermatology and Venereology', 'Amman', 20, 1, '0784567891', 4),
-('mohammedmostafa@email.com', 'Azazaz1212', 'mohammad Mostafa', 'sex', 'Maan', 300, 2, '0794567891', 4);
+INSERT INTO `doctor` (`Email`, `Pass`, `Name`, `specialty`, `location_Doc`, `Fees`, `id`, `Phone`, `evaluation`, `img`, `Waiting_Time`) VALUES
+('ahmadalmasarwa@email.com', 'Azazaz1212', ' Ahmad Almasarwa', ' Dermatology and Venereology', 'Amman', 20, 1, '0784567891', 4, '../images/user.png', '30'),
+('mohammedmostafa@email.com', 'Azazaz1212', 'mohammad Mostafa', 'sex', 'Maan', 300, 2, '0794567891', 4, '../images/user.png', '30');
 
 -- --------------------------------------------------------
 
@@ -103,6 +105,18 @@ INSERT INTO `make1` (`Place`, `clinic`) VALUES
 ('', ''),
 ('', ''),
 ('', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rating`
+--
+
+CREATE TABLE `rating` (
+  `Doc_id` int(11) NOT NULL,
+  `user_Email` varchar(255) NOT NULL,
+  `rating` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
