@@ -1,5 +1,5 @@
 <?php
-@include_once "connection.php";
+include_once "connection.php";
 session_start();
 ?>
 <!DOCTYPE html>
@@ -45,7 +45,7 @@ session_start();
     input.form-control,
     select.form-select {
       max-width: 415px;
-      
+
     }
 
     .card {
@@ -67,51 +67,57 @@ session_start();
     .header {
       margin-top: 75px;
     }
-.body{
-background: #222225;
-color: white;
-margin: 100px auto;
-}
 
-.rating {
-display: flex;
-flex-direction: row-reverse;
-justify-content: center;
-}
+    .body {
+      background: #222225;
+      color: white;
+      margin: 100px auto;
+    }
 
-.rating > input{
- display:none;
-}
+    .rating {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: center;
+    }
 
-.rating > label {
-position: relative;
-width: 1cm;
-font-size: 2.5vw;
-color: #FFD700;
-cursor: pointer;
-right: 1cm;
-bottom: 5px;
+    .rating>input {
+      display: none;
+    }
 
-}
+    .rating>label {
+      position: relative;
+      width: 1cm;
+      font-size: 2.5vw;
+      color: #FFD700;
+      cursor: pointer;
+      right: 1cm;
+      bottom: 5px;
 
-.rating > label::before{
-content: "\2605";
-position: absolute;
-opacity: 0;
-}
+    }
 
-.rating > label:hover:before,
-.rating > label:hover ~ label:before {
-opacity: 1 !important;
-}
+    .ratingdone {
+      opacity: 1;
+    }
 
-.rating > input:checked ~ label:before{
-opacity:1;
-}
 
-.rating:hover > input:checked ~ label:before{ 
-opacity: 0.4;
- }
+    .rating>label::before {
+      content: "\2605";
+      position: absolute;
+      opacity: 0;
+    }
+
+    /* .rating>label:hover:before,
+    .rating>label:hover~label:before {
+      opacity: 1 !important;
+    } */
+
+    .rating>input:checked~label:before {
+      opacity: 1;
+    }
+
+    /* .rating:hover>input:checked~label:before {
+      opacity: 0.4;
+    } */
   </style>
 </head>
 
@@ -166,49 +172,77 @@ opacity: 0.4;
 
 
       </div>
-
       <form action="Appointment1.php" method="post" role="form" class="php-email-form">
-        <div class="row">
-          <div class="col-md-8" style="border:1px solid #3AB19B;display:inline-flex;">
-            <div class="col-md-3 form-group">
-              <img src="../images/user.png" style="width: 50%;">
+        <?php
+        if (isset($_SESSION["clinic"])) {
+          $sp = $_SESSION['clinic'];
+        } else  $sp = '';
+        if (isset($_SESSION["DocLoc"]))
+          $loc = $_SESSION['DocLoc'];
+        else $loc = '';
+        $SQL = "SELECT * FROM doctor WHERE specialty = '$sp' OR location_Doc = '$loc'";
+        $Result = mysqli_query($conn, $SQL);
+        if (mysqli_num_rows($Result) > 0) {
+          while ($row = mysqli_fetch_Assoc($Result)) {
+            $sql1 = "SELECT SUM(rating)/Count(*) as rat FROM rating WHERE Doc_id =" . $row['id'] . "";
+            $Result1 = mysqli_query($conn, $sql1);
+            $row1 = mysqli_fetch_Assoc($Result1);
+            echo "
+        <div class='row'>
+          <div class='col-md-8' style='border:1px solid #3AB19B;display:inline-flex;'>
+            <div class='col-md-3 form-group'>
+              <img src='" . $row['img'] . "' style='width: 50%;'>
             </div>
-            <div class="col-md-4 form-group card">
-              <h4><i class="bi bi-person-circle" aria-hidden="true" style="color:#3AB19B;"></i> Ahmad Almasarwa </h4>
+            <div class='col-md-4 form-group card'>
+              <h4><i class='bi bi-person-circle' aria-hidden='true' style='color:#3AB19B;'></i> " . $row['Name'] . " </h4>
               
-              <div class="rating">
-                <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
-                <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
-                <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
-                <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
-                <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
-              </div>
-              <p><i class="fa fa-stethoscope" aria-hidden="true" style="color:#3AB19B;"></i> Dermatology and Venereology</p>
-              <p><i class="fa fa-map-marker" aria-hidden="true" style="color:#3AB19B;"></i> Amman</p>
-              <p><i class="fa-solid fa-clock" style="color:#3AB19B;"></i> Waiting Time : 15 - 20 </p>
-              <p><i class="fa-solid fa-eye" style="color:#3AB19B;"></i> Views : 5030 </p>
-              <p style="padding-left:5px ;"><i class="fa fa-dollar-sign" style="color:#3AB19B;"></i> Fees : 20 JOD </p>
-              <p><i class="bi bi-telephone-fill" style="color:#3AB19B;"></i><a href="tel:+962786707010">+962 786707010</a></p>
+            <div class='rating'>";
+            $rat = intval($row1['rat']);
+            if ($rat == 5) {
+              echo "
+              <input type='radio' name='rating' value='5' id='5' checked ><label Class='ratingdone' for='5'>☆</label>";
+            } else echo "<input type='radio' name='rating' value='5' id='5'><label for='5'>☆</label>";
+            if ($rat == 4) {
+              echo "
+              <input type='radio' name='rating' value='4' id='4' checked><label Class='ratingdone' for='4'>☆</label>";
+            } else echo "<input type='radio' name='rating' value='4' id='4'><label for='4'>☆</label>";
+            if ($rat == 3) {
+              echo "
+              <input type='radio' name='rating' value='3' id='3' checked><label Class='ratingdone' for='3'>☆</label>";
+            } else echo "<input type='radio' name='rating' value='3' id='3'><label for='3'>☆</label>";
+            if ($rat == 2) {
+              echo "
+              <input type='radio' name='rating' value='2' id='2' checked><label Class='ratingdone'for='2'>☆</label>";
+            } else echo "<input type='radio' name='rating' value='2' id='2'><label for='2'>☆</label>";
+            if ($rat == 1) {
+              echo "
+              <input type='radio' name='rating' value='1' id='1' checked><label Class='ratingdone'for='1'>☆</label>";
+            } else echo "<input type='radio' name='rating' value='1' id='1'><label for='1'>☆</label>";
+
+            echo "</div>
+              <p><i class='fa fa-stethoscope' aria-hidden='true' style='color:#3AB19B;'></i> " . $row['specialty'] . "</p>
+              <p><i class='fa fa-map-marker' aria-hidden='true' style='color:#3AB19B;'></i> " . $row['location_Doc'] . "</p>
+              <p><i class='fa-solid fa-clock' style='color:#3AB19B;'></i> Waiting Time : " . $row['Waiting_Time'] . " - " . $row['Waiting_Time'] + '10' . " </p>
+              <p><i class='fa-solid fa-eye' style='color:#3AB19B;'></i> Views : 5030 </p>
+              <p style='padding-left:5px ;'><i class='fa fa-dollar-sign' style='color:#3AB19B;'></i> Fees : " . $row['Fees'] . " JOD </p>
+              <p><i class='bi bi-telephone-fill' style='color:#3AB19B;'></i><a href='tel:+962786707010'>" . $row['Phone'] . "</a></p>
             </div>
-            <div class="col-md-2 form-group card">
+            <div class='col-md-2 form-group card'>
 
             </div>
-            <div class="col-md-1 form-group">
-              <?php
-              if (isset($_SESSION["Name"])) { ?>
-                <a href="book_appoinment.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
-                <!-- <a href="forms/book_appoinment.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a> -->
-              <?php } else { ?>
-                <a href="login.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
-              <?php  } ?>
+            <div class='col-md-1 form-group'>
+
             </div>
           </div>
         </div>
-        <!-- <div class="mb-3">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
-            </div> -->
+         <div class='mb-3'>
+              <div class='loading'>Loading</div>
+              <div class='error-message'></div>
+              <div class='sent-message'>Your appointment request has been sent successfully. Thank you!</div>
+            </div> 
+            ";
+          }
+        } else echo "<div>No Doctors Here </div>"; ?>
       </form>
     </div>
   </section><!-- End Appointment Section -->
