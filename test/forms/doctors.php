@@ -242,7 +242,7 @@ session_start();
             </div> 
             ";
           }
-        } else echo "<div>No Doctors Here </div>"; ?>
+        } else echo "<div>No Doctors Here omar </div>"; ?>
       </form>
     </div>
   </section><!-- End Appointment Section -->
