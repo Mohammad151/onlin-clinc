@@ -1,5 +1,4 @@
 <?php
-include_once "connection.php";
 session_start();
 
 // if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -20,6 +19,49 @@ session_start();
 //       echo '<script type="text/javascript">alert("Invalid Information, Try again!");</script>';
 //    }
 // }
+
+// $servername = "localhost";
+// $username = "root";
+// $password = "";
+// $dbname = "online-clinc";
+// $conn = new mysqli($servername,$username,$password,$dbname);
+
+include_once("connection.php");
+
+//    $email = $_POST['email'];
+//    $pass = $_POST['password'];
+
+//    $sql = "SELECT Email,Pass FROM doctor WHERE Email='$email' AND Pass='$pass' limit 1";
+//    $result = $conn->query($sql);
+//       if($result->num_rows > 0 ){
+//          while($row = $result->fetch_assoc()){
+//             header('Location: index.php');
+//             exit;
+//          }
+//       }else{
+//          header('Location:logindoctors.php');
+//          exit;
+//       }
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+   $email = mysqli_real_escape_string($conn, $_POST["email"]);
+   $pass = mysqli_real_escape_string($conn, $_POST["password"]);
+   $sql = "SELECT * FROM doctor WHERE Email = '$email' AND Pass = '$pass'";
+   $result = mysqli_query($conn, $sql);
+   $row =  mysqli_fetch_assoc($result);
+   $count = mysqli_num_rows($result);
+   if ($count == 1) {
+      $_SESSION["Name"] = $row["Name"];
+      $_SESSION["Email"] = $row["Email"];
+      $_SESSION["Phone"] = $row["phone"];
+      $_SESSION["NavToggle"] = 1;
+
+      echo "<script>window.location.href='index.php';</script>";
+   } else {
+      echo '<script type="text/javascript">alert("Invalid Information, Try again!");</script>';
+   }
+}
+
+
 
 
 
@@ -45,6 +87,10 @@ session_start();
          width: 110%;
          position: relative;
          left: -35px;
+         
+      }
+      .welcome p{
+         font-size: 2.5rem;
       }
       /* The message box is shown when the user clicks on the password field */
    #message {
@@ -83,20 +129,21 @@ session_start();
   left: -35px;
   content: "✖";
    }
+
 </style>
 </head>
 
 <body>
    <div class="wrapper">
       <div class="welcome">
-         <h1>You are a doctor and you need to sign up with us !</h1>
+         <p>You are a doctor and you need to sign up with us ! ⥥</p>
          <p class="description">
          </p>
-         <a href="sign_up.php">
-            <button class="switch" id="my-button">Connect us</button>
+         <a href="tel:+962786707010">
+            <button class="switch" id="my-button">Click here to contact us</button>
          </a>
       </div>
-      <form method="GET" action="log-val.php"  class="form">
+      <form method="POST" action="logindoctors.php" class="form">
 
          <h1 class="logo"><img src="images/logo.gif"></h1>
          <h1 class="title">Login</h1>
@@ -106,7 +153,7 @@ session_start();
          <div class="input-form">
          
             <?php
-               if($_SERVER['REQUEST_METHOD']=="GET"){
+            if($_SERVER["REQUEST_METHOD"] == "POST"){
                   @$note = $_REQUEST['note'];
                   echo $note;
                }
