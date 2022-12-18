@@ -153,7 +153,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          <div class="input-form">
          
             <?php
-            if($_SERVER["REQUEST_METHOD"] == "POST"){
+            if($_SERVER["REQUEST_METHOD"] == "GET"){
                   @$note = $_REQUEST['note'];
                   echo $note;
                }
@@ -173,12 +173,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                </div>
                
             </div>
-<div id="message" class="bg-white">
+<!-- <div id="message" class="bg-white">
   <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
   <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
   <p id="number" class="invalid">A <b>number</b></p>
   <p id="length" class="invalid">Minimum <b>8 characters</b></p>
-</div>
+</div> -->
 <button type="submit" class="sign-in" name="submit">SIGN IN</button>
          </div>
       </form>

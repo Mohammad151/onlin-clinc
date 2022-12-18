@@ -134,7 +134,12 @@ session_start();
                 <input type="time" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
                 <div class="validate"></div>
               </div>
+              
               <div class="col-md-4 form-group mt-3">
+              <input type="number" name="patient_age" class="form-control" id="Age" placeholder="patient's age" data-msg="Please enter at least 4 chars" min="1" max="110">
+              <div class="validate"></div>
+            </div>
+              <!-- <div class="col-md-4 form-group mt-3">
                 <select name="clinic" id="clinic" class="form-select">
                   <option value="">Search by speciality, treatment, case...</option>
                   <option value="clinic 1"> Ear Nose and Throat </option>
@@ -175,8 +180,8 @@ session_start();
                   <option value="clinic 36">Oncology</option>
                   <option value="clinic 36">Radiology</option>
                   
-                </select>
-                <div class="validate"></div>
+                </select> -->
+                <!-- <div class="validate"></div>
               </div>
               <div class="col-md-4 form-group mt-3">
                 <select name="location" id="Location" class="form-select">
@@ -193,21 +198,17 @@ session_start();
                   <option value="10">Tafilah</option>
                   <option value="11">Ma'an</option>
                   <option value="12">Aqaba</option>
-                </select>
-                <div class="validate"></div>
-              </div>
-              <div class="col-md-4 form-group mt-3">
+                </select> -->
+                
+              <!-- <div class="col-md-4 form-group mt-3">
                 <select name="doctors" id="doctors" class="form-select">
                 <option value="">Search by Doctor name</option>
                 <option value="">Ahmad jjjj</option>
                 <option value="">Ahmad jjjj</option>
                 <option value="">Ahmad jjjj</option>
                 </select>
-              </div>
-              <div class="col-md-4 form-group mt-3">
-              <input type="number" name="patient_age" class="form-control" id="Age" placeholder="patient's age" data-msg="Please enter at least 4 chars" min="1" max="110">
-              <div class="validate"></div>
-            </div>
+              </div> -->
+              
             </div>
         
   
@@ -220,7 +221,9 @@ session_start();
               <div class="error-message"></div>
               <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
             </div> -->
-            <button type="submit" class="mx-auto d-block">Make an Appointment</button>
+            <!-- <button type="submit" class="mx-auto d-block">Make an Appointment</button> -->
+            <button type="submit" class="mx-auto d-block"><span class="d-none d-md-inline">Make an</span> Appointment</button>
+
           </form>
         </div>
       </section><!-- End Appointment Section -->
