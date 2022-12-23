@@ -168,27 +168,25 @@ session_start();
       <div class="section-title">
         <h2 class="header">List of Doctors</h2>
 
-
-
       </div>
-      <form action="Appointment1.php" method="post" role="form" class="php-email-form">
-        <?php
-        if (isset($_SESSION["clinic"])) {
-          $sp = $_SESSION['clinic'];
-        } else  $sp = '';
-        if (isset($_SESSION["DocLoc"]))
-          $loc = $_SESSION['DocLoc'];
-        else $loc = '';
-        // $SQL = "SELECT * FROM doctor WHERE specialty = '$sp' AND location_Doc = '$loc'";
-        $SQL = "SELECT * FROM doctor WHERE specialty = '$sp' AND location_Doc = '$loc'";
+      <?php
+      if (isset($_SESSION["clinic"])) {
+        $sp = $_SESSION['clinic'];
+      } else  $sp = '';
+      if (isset($_SESSION["DocLoc"]))
+        $loc = $_SESSION['DocLoc'];
+      else $loc = '';
+      // $SQL = "SELECT * FROM doctor WHERE specialty = '$sp' AND location_Doc = '$loc'";
+      $SQL = "SELECT * FROM doctor WHERE specialty = '$sp' AND location_Doc = '$loc'";
 
-        $Result = mysqli_query($conn, $SQL);
-        if (mysqli_num_rows($Result) > 0) {
-          while ($row = mysqli_fetch_Assoc($Result)) {
-            $sql1 = "SELECT SUM(rating)/Count(*) as rat FROM rating WHERE Doc_id =" . $row['id'] . "";
-            $Result1 = mysqli_query($conn, $sql1);
-            $row1 = mysqli_fetch_Assoc($Result1);
-            echo "
+      $Result = mysqli_query($conn, $SQL);
+      if (mysqli_num_rows($Result) > 0) {
+        while ($row = mysqli_fetch_Assoc($Result)) {
+          $sql1 = "SELECT SUM(rating)/Count(*) as rat FROM rating WHERE Doc_id =" . $row['id'] . "";
+          $Result1 = mysqli_query($conn, $sql1);
+          $row1 = mysqli_fetch_Assoc($Result1);
+          echo "
+            <form method='post' role='form' class='php-email-form'>
         <div class='row'>
           <div class='col-md-8' style='border:1px solid #3AB19B;display:inline-flex;'>
             <div class='col-md-3 form-group'>
@@ -198,29 +196,29 @@ session_start();
               <h4><i class='bi bi-person-circle' aria-hidden='true' style='color:#3AB19B;'></i> " . $row['Name'] . " </h4>
               
             <div class='rating'>";
-            $rat = intval($row1['rat']);
-            if ($rat == 5) {
-              echo "
+          $rat = intval($row1['rat']);
+          if ($rat == 5) {
+            echo "
               <input type='radio' name='rating' value='5' id='5' checked ><label Class='ratingdone' for='5'>☆</label>";
-            } else echo "<input type='radio' name='rating' value='5' id='5'><label for='5'>☆</label>";
-            if ($rat == 4) {
-              echo "
+          } else echo "<input type='radio' name='rating' value='5' id='5'><label for='5'>☆</label>";
+          if ($rat == 4) {
+            echo "
               <input type='radio' name='rating' value='4' id='4' checked><label Class='ratingdone' for='4'>☆</label>";
-            } else echo "<input type='radio' name='rating' value='4' id='4'><label for='4'>☆</label>";
-            if ($rat == 3) {
-              echo "
+          } else echo "<input type='radio' name='rating' value='4' id='4'><label for='4'>☆</label>";
+          if ($rat == 3) {
+            echo "
               <input type='radio' name='rating' value='3' id='3' checked><label Class='ratingdone' for='3'>☆</label>";
-            } else echo "<input type='radio' name='rating' value='3' id='3'><label for='3'>☆</label>";
-            if ($rat == 2) {
-              echo "
+          } else echo "<input type='radio' name='rating' value='3' id='3'><label for='3'>☆</label>";
+          if ($rat == 2) {
+            echo "
               <input type='radio' name='rating' value='2' id='2' checked><label Class='ratingdone'for='2'>☆</label>";
-            } else echo "<input type='radio' name='rating' value='2' id='2'><label for='2'>☆</label>";
-            if ($rat == 1) {
-              echo "
+          } else echo "<input type='radio' name='rating' value='2' id='2'><label for='2'>☆</label>";
+          if ($rat == 1) {
+            echo "
               <input type='radio' name='rating' value='1' id='1' checked><label Class='ratingdone'for='1'>☆</label>";
-            } else echo "<input type='radio' name='rating' value='1' id='1'><label for='1'>☆</label>";
+          } else echo "<input type='radio' name='rating' value='1' id='1'><label for='1'>☆</label>";
 
-            echo "</div>
+          echo "</div>
               <p><i class='fa fa-stethoscope' aria-hidden='true' style='color:#3AB19B;'></i> " . $row['specialty'] . "</p>
               <p><i class='fa fa-map-marker' aria-hidden='true' style='color:#3AB19B;'></i> " . $row['location_Doc'] . "</p>
               <p><i class='fa-solid fa-clock' style='color:#3AB19B;'></i> Waiting Time : " . $row['Waiting_Time'] . " - " . $row['Waiting_Time'] + '10' . " </p>
@@ -231,7 +229,7 @@ session_start();
             <div class='col-md-2 form-group card'>
             </div>'
             <div class='col-md-1 form-group'>
-            <a href='book_appoinment.php' target='_blank' class='appointment-btn scrollto'><span class='d-none d-md-inline'>Make an</span> Appointment</a>
+            <a href='book_appoinment.php' target='_blank' class='appointment-btn scrollto make' data-clinc_id='" . $row["id"] . "'><span class='d-none d-md-inline'>Make an</span> Appointment</a>
 
             </div>
           </div>
@@ -241,11 +239,32 @@ session_start();
               <div class='error-message'></div>
               <div class='sent-message'>Your appointment request has been sent successfully. Thank you!</div>
             </div> 
+            </form>
             ";
-          }
-        } else echo "<div>No Doctors </div>"; ?>
-      </form>
+        }
+      } else echo "<div>No Doctors </div>"; ?>
+
     </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script language="JavaScript" type="text/javascript">
+      document.querySelectorAll(".make").forEach((element) => {
+        element.addEventListener("click", () => {
+          const id = element.dataset.clinc_id;
+          console.log(id);
+          document.cookie = `appid=${id}`;
+          // $.ajax({
+          //   url: "appointment1.php",
+          //   type: "post",
+          //   data: {
+          //     id,
+          //   },
+          //   success() {
+          //     window.location.href = "book_appoinment.php";
+          //   },
+          // });
+        });
+      });
+    </script>
   </section><!-- End Appointment Section -->
 
   <!-- ======= Footer ======= -->
@@ -277,7 +296,7 @@ session_start();
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script type="module" src="../assets/js/main.js" defer></script>
 
 </body>
 

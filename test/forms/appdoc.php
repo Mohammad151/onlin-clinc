@@ -72,7 +72,7 @@ session_start();
       color: white;
       margin: 100px auto;
     }
-    </style>
+  </style>
 </head>
 
 <body>
@@ -127,48 +127,68 @@ session_start();
 
       </div>
       <form action="" method="post" role="form" class="php-email-form">
-       
+
         <div class="row">
           <div class="col-md-8" style="border:1px solid #3AB19B;display:inline-flex;">
             <div class="col-md-3 form-group">
-              <img src="../images/user.png"  style="width: 50%;">
+              <img src="../images/user.png" style="width: 50%;">
             </div>
             <?php
-              $sql = "SELECT * FROM appointment WHERE id=1";
-              $result = mysqli_query($conn, $sql);
-              if (mysqli_num_rows($result) > 0) {
-                while ($row = mysqli_fetch_Assoc($result)) {
-                  echo 
-                  "<div class='col-md-4 form-group card'>
-                  <h4><i class='bi bi-person-circle' aria-hidden='true' style='color:#3AB19B;'></i>" . $row['FName'] . ' ( ' . $row['Realitive_Realation'] . ' ) ' ." </h4>
+            $sql = "SELECT * FROM appointment WHERE clinic = '" . $_SESSION['id'] . "' AND status = 0";
+            $result = mysqli_query($conn, $sql);
+            if (mysqli_num_rows($result) > 0) {
+              while ($row = mysqli_fetch_Assoc($result)) {
+                echo
+                "<div class='col-md-4 form-group card'>
+                  <h4><i class='bi bi-person-circle' aria-hidden='true' style='color:#3AB19B;'></i>" . $row['FName'] . ' ( ' . $row['Realitive_Realation'] . ' ) ' . " </h4>
                   <p>Age: " . $row['patient_age'] . " </p>
                   <p><i class='fa fa-map-marker' aria-hidden='true' style='color:#3AB19B;'></i>" . $row['Place'] . "</p>
                   <p><span class='bi bi-clock-fill' aria-hidden='true' style='color:#3AB19B;'></i>" . $row['history'] . "</p>
                   <p><i class='bi bi-telephone-fill' style='color:#3AB19B;'></i> <a href=tel:>" . $row['phone'] . "</a></p>
                   <p><i class='bi bi-chat-dots-fill' style='color:#3AB19B;'></i>" . $row['message_sent'] . "</p>
                   </div>
+                  <div class='col-md-2 form-group card'>
+                  </div>
+      
+                  <div class='col-md-1 form-group'>
+                    <a target='_blank' class='appointment-btn scrollto done' data-app_id = '" . $row['id'] . "'><span class='d-none d-md-inline'>  </span> Done</a>
+      
+                  </div>
+                </div>
+              </div>
+              <div class='mb-3'>
+                <div class='loading'>Loading</div>
+                <div class='error-message'></div>
+                <div class='sent-message'>Your appointment request has been sent successfully. Thank you!</div>
+              </div>
+            </form>
                   ";
-                }
               }
+            }
             ?>
-            <div class="col-md-2 form-group card">
-            </div>
 
-            <div class="col-md-1 form-group">
-            <a href="book_appoinment.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
-
-            </div>
           </div>
-        </div>
-         <div class="mb-3">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
-            </div> 
-      </form>
-    </div>
   </section><!-- End Appointment Section -->
-
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script language="JavaScript" type="text/javascript">
+    document.querySelectorAll(".done").forEach((element) => {
+      element.addEventListener("click", () => {
+        const id = element.dataset.app_id;
+        console.log(id);
+        $.ajax({
+          url: "appointment1.php",
+          type: "post",
+          data: {
+            done: 1,
+            id,
+          },
+          success() {
+            window.location.href = "appdoc.php";
+          },
+        });
+      });
+    });
+  </script>
   <!-- ======= Footer ======= -->
   <footer id="footer">
 
