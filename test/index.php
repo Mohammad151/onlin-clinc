@@ -96,16 +96,16 @@ session_start();
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
       <?php
-      if (isset($_SESSION["Name"])) { ?>
-        <?php if (isset($_SESSION["doc"])) { ?>
-          <a href="forms/appdoc.php" class="appointment-btn scrollto">reservations</a>
-        <?php } else { ?>
-          <a href="forms/make1.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
-          <!-- <a href="forms/book_appoinment.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a> -->
-        <?php }
-      } else { ?>
-        <a href="login.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
-      <?php  } ?>
+      if (isset($_SESSION["Name"])) { 
+         if (isset($_SESSION["doc"])) { 
+          echo' <a href="forms/appdoc.php" class="appointment-btn scrollto">reservations</a>';
+         } else { 
+          echo '<a href="forms/make1.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>';
+          // <!-- <a href="forms/book_appoinment.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a> -->
+         }
+      } else { 
+       echo' <a href="login.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>';
+        }?>
 
     </div>
   </header><!-- End Header -->
