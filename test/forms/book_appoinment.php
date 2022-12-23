@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name'])) {
   $date = date("Y-m-d H:i:s", time());
   $patient_age = $_POST['patient_age'];
   $message = $_POST['message'];
-  $sql = "INSERT INTO appointment(Fname,Realitive_Realation,phone,patient_age,message_sent,clinic,email,history) VALUES ('$name','$Relative_Relation','$phone','$patient_age','$message','$id','" . $_SESSION['Email'] . "','$date)";
+  $sql = "INSERT INTO appointment(Fname,Realitive_Realation,phone,patient_age,message_sent,clinic,email,history) VALUES ('$name','$Relative_Relation','$phone','$patient_age','$message','$id','" . $_SESSION['Email'] . "','$date')";
   if (mysqli_query($conn, $sql)) {
     echo '<script type="text/javascript">alert("Your request has been successfully submitted");</script>';
   } else {
@@ -148,6 +148,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name'])) {
               <input type="submit">
             </form> -->
         <div class="row">
+
           <!-- <div class="col-md-4 form-group mt-3">
             <input type="time" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
             <div class="validate"></div>
