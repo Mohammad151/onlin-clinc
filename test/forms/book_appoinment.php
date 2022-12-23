@@ -101,7 +101,7 @@ session_start();
             <p>Book with the best doctors and clinics in Jordan now</p>
 
           </div>
-          <form action="" method="post" role="form" class="php-email-form">
+          <form action="appointment1.php" method="post" role="form" class="php-email-form">
             <div class="row">
               <div class="col-md-4 form-group">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
@@ -130,84 +130,15 @@ session_start();
               <input type="submit">
             </form> -->
             <div class="row">
-              <div class="col-md-4 form-group mt-3">
+              <!-- <div class="col-md-4 form-group mt-3">
                 <input type="time" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
                 <div class="validate"></div>
-              </div>
+              </div> -->
               
               <div class="col-md-4 form-group mt-3">
               <input type="number" name="patient_age" class="form-control" id="Age" placeholder="patient's age" data-msg="Please enter at least 4 chars" min="1" max="110">
               <div class="validate"></div>
             </div>
-              <!-- <div class="col-md-4 form-group mt-3">
-                <select name="clinic" id="clinic" class="form-select">
-                  <option value="">Search by speciality, treatment, case...</option>
-                  <option value="clinic 1"> Ear Nose and Throat </option>
-                  <option value="clinic 2">Gynecology and Infertility</option>
-                  <option value="clinic 3">Orthopedic and Fracture Surgery</option>
-                  <option value="clinic 4">Dermatology and Venereology</option>
-                  <option value="clinic 5">Internal Medicin</option>
-                  <option value="clinic 6">Ophthalmology</option>
-                  <option value="clinic 7">Urology</option>
-                  <option value="clinic 8">Psychiatry</option>
-                  <option value="clinic 9">Cosmetic Dermatology and Laser</option>
-                  <option value="clinic 10">IVF and Infertility</option>
-                  <option value="clinic 11">Pediatrics and New Born</option>
-                  <option value="clinic 12">Cardiology</option>
-                  <option value="clinic 13">Gastroenterology and Endoscopy</option>
-                  <option value="clinic 14">Neurology</option>
-                  <option value="clinic 15">Pulmonology</option>
-                  <option value="clinic 16">Dietitian and Nutrition</option>
-                  <option value="clinic 17">Andrology and Male Infertility</option>
-                  <option value="clinic 18">General Surgery</option>
-                  <option value="clinic 19">Liver Disease</option>
-                  <option value="clinic 20">Spine Surgery</option>
-                  <option value="clinic 21">Diabetes and Endocrinology</option>
-                  <option value="clinic 22">Nephrology</option>
-                  <option value="clinic 23">Obesity and Laparoscopic Surgery</option>
-                  <option value="clinic 24">Neurosurgery</option>
-                  <option value="clinic 25">Vascular Surgery</option>
-                  <option value="clinic 26">Rheumatology</option>
-                  <option value="clinic 27">Plastic and Reconstructive Surgery</option>
-                  <option value="clinic 28">Allergy and Immunology</option>
-                  <option value="clinic 29">General Practice</option>
-                  <option value="clinic 30">Family Medicine</option>
-                  <option value="clinic 31">Pediatric Surgery</option>
-                  <option value="clinic 32">Cardiac Surgery</option>
-                  <option value="clinic 33">Hematology</option>
-                  <option value="clinic 34">Pain Management</option>
-                  <option value="clinic 35">Physiotherapy</option>
-                  <option value="clinic 36">Oncology</option>
-                  <option value="clinic 36">Radiology</option>
-                  
-                </select> -->
-                <!-- <div class="validate"></div>
-              </div>
-              <div class="col-md-4 form-group mt-3">
-                <select name="location" id="Location" class="form-select">
-                  <option value="">Location</option>
-                  <option value="1">Irbid</option>
-                  <option value="2">Ajloun</option>
-                  <option value="3">Jerash</option>
-                  <option value="4">Mafraq</option>
-                  <option value="5">Balqa</option>
-                  <option value="6">Amman</option>
-                  <option value="7">Zarqa</option>
-                  <option value="8">Madaba</option>
-                  <option value="9">Alkarak</option>
-                  <option value="10">Tafilah</option>
-                  <option value="11">Ma'an</option>
-                  <option value="12">Aqaba</option>
-                </select> -->
-                
-              <!-- <div class="col-md-4 form-group mt-3">
-                <select name="doctors" id="doctors" class="form-select">
-                <option value="">Search by Doctor name</option>
-                <option value="">Ahmad jjjj</option>
-                <option value="">Ahmad jjjj</option>
-                <option value="">Ahmad jjjj</option>
-                </select>
-              </div> -->
               
             </div>
         

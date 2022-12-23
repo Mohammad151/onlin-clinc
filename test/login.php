@@ -104,6 +104,8 @@ session_start();
             exit;
          }
       }
+
+      //khsjhfkdhkshfkhdskghksdhg
       ?>
 
       <form method="POST" action="" class="form">
@@ -116,7 +118,7 @@ session_start();
          <div class="input-form">
 
             <?php
-            if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            if ($_SERVER['REQUEST_METHOD'] == "GET") {
                @$note = $_REQUEST['note'];
                echo $note;
             }
@@ -130,7 +132,7 @@ session_start();
             </div>
 
             <div class="password input-cont d-flex">
-               <input type="password" id="psw" class="input" placeholder="Password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" />
+               <input  type="password" id="psw" class="input" placeholder="Password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" />
                <div class="icon">
                   <i class="fas fa-lock"></i>
                </div>

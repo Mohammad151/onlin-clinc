@@ -133,16 +133,24 @@ session_start();
             <div class="col-md-3 form-group">
               <img src="../images/user.png"  style="width: 50%;">
             </div>
-            <div class="col-md-4 form-group card">
-              <h4><i class="bi bi-person-circle" aria-hidden="true" style="color:#3AB19B;"></i> name of patiant and relative</h4>
-              <p>Age:</p>              
-              <p><i class="fa fa-map-marker" aria-hidden="true" style="color:#3AB19B;"></i></p>
-              <p><span class='bi bi-clock-fill' aria-hidden="true" style="color:#3AB19B;"></i></p>
-              <!-- <p><i class="bi bi-hourglass-bottom" style="color:#3AB19B;"></i> Waiting Time :</p> -->
-              <!-- <p style="padding-left:5px ;"><i class="fa fa-dollar-sign" style="color:#3AB19B;"></i> Fees :  JOD </p> -->
-              <p><i class="bi bi-chat-dots-fill" style="color:#3AB19B;"></i><a href="tel:"></a></p>
-              
-            </div>
+            <?php
+              $sql = "SELECT * FROM appointment WHERE id=1";
+              $result = mysqli_query($conn, $sql);
+              if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_Assoc($result)) {
+                  echo 
+                  "<div class='col-md-4 form-group card'>
+                  <h4><i class='bi bi-person-circle' aria-hidden='true' style='color:#3AB19B;'></i>" . $row['FName'] . ' ( ' . $row['Realitive_Realation'] . ' ) ' ." </h4>
+                  <p>Age: " . $row['patient_age'] . " </p>
+                  <p><i class='fa fa-map-marker' aria-hidden='true' style='color:#3AB19B;'></i>" . $row['Place'] . "</p>
+                  <p><span class='bi bi-clock-fill' aria-hidden='true' style='color:#3AB19B;'></i>" . $row['history'] . "</p>
+                  <p><i class='bi bi-telephone-fill' style='color:#3AB19B;'></i> <a href=tel:>" . $row['phone'] . "</a></p>
+                  <p><i class='bi bi-chat-dots-fill' style='color:#3AB19B;'></i>" . $row['message_sent'] . "</p>
+                  </div>
+                  ";
+                }
+              }
+            ?>
             <div class="col-md-2 form-group card">
             </div>
 

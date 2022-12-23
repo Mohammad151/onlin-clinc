@@ -12,15 +12,17 @@ if($conn->connect_error){
 $name = $_POST['name'];
 $Relative_Relation = $_POST['Relative_Relation'];
 $phone = $_POST['phone'];
-$date = $_POST['date'];
+// $date = $_POST['date'];
 $patient_age = $_POST['patient_age'];
-$location = $_POST['location'];
-$clinic = $_POST['clinic'];
+// $location = $_POST['location'];
+// $clinic = $_POST['clinic'];
 $message = $_POST['message'];
+$sql = "INSERT INTO appointment(Fname,Realitive_Realation,phone,patient_age,message_sent) VALUES ($name,$Relative_Relation,$phone,$patient_age,$message)";
 
-$stmt = $conn->prepare("INSERT INTO appointment(Fname,Realitive_Realation,phone,history,Place,clinic,patient_age,message_sent) VALUE (?,?,?,?,?,?,?,?)");
-$stmt->bind_param("ssisssis",$name,$Relative_Relation,$phone,$data,$patient_age,$location,$clinic,$message);
+// $stmt = $conn->prepare("INSERT INTO appointment(Fname,Realitive_Realation,phone,patient_age,message_sent) VALUE (?,?,?,?,?)");
+// $stmt->bind_param("ssiss",$name,$Relative_Relation,$phone,$patient_age,$message);
 // $stmt->execute();
-// echo "Succes";
+
+echo "Success";
 }
 ?>

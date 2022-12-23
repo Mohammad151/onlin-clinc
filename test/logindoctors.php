@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $_SESSION["Phone"] = $row["phone"];
       $_SESSION["NavToggle"] = 1;
 
-      echo "<script>window.location.href='index.php';</script>";
+      echo "<script>window.location.href='forms/appdoc.php';</script>";
    } else {
       echo '<script type="text/javascript">alert("Invalid Information, Try again!");</script>';
    }

@@ -165,7 +165,6 @@ session_start();
   <!-- ======= Appointment Section ======= -->
   <section id="appointment" class="appointment section-bg">
     <div class="container">
-
       <div class="section-title">
         <h2 class="header">List of Doctors</h2>
 
@@ -180,7 +179,9 @@ session_start();
         if (isset($_SESSION["DocLoc"]))
           $loc = $_SESSION['DocLoc'];
         else $loc = '';
-        $SQL = "SELECT * FROM doctor WHERE specialty = '$sp' OR location_Doc = '$loc'";
+        // $SQL = "SELECT * FROM doctor WHERE specialty = '$sp' AND location_Doc = '$loc'";
+        $SQL = "SELECT * FROM doctor WHERE specialty = '$sp' AND location_Doc = '$loc'";
+
         $Result = mysqli_query($conn, $SQL);
         if (mysqli_num_rows($Result) > 0) {
           while ($row = mysqli_fetch_Assoc($Result)) {
@@ -242,7 +243,7 @@ session_start();
             </div> 
             ";
           }
-        } else echo "<div>No Doctors Here omar </div>"; ?>
+        } else echo "<div>No Doctors </div>"; ?>
       </form>
     </div>
   </section><!-- End Appointment Section -->

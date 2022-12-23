@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 16, 2022 at 06:27 PM
+-- Generation Time: Dec 23, 2022 at 01:15 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -39,14 +39,6 @@ CREATE TABLE `appointment` (
   `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `appointment`
---
-
-INSERT INTO `appointment` (`FName`, `Realitive_Realation`, `phone`, `history`, `Place`, `clinic`, `patient_age`, `message_sent`, `email`) VALUES
-('nmnkjkj', 'kjjnjkkkk', '5888888', NULL, '15', '8', 0, 0, ''),
-('nmnkjkj', 'kjjnjkkkk', '5888888', NULL, '15', '8', 0, 0, '');
-
 -- --------------------------------------------------------
 
 --
@@ -72,8 +64,10 @@ CREATE TABLE `doctor` (
 --
 
 INSERT INTO `doctor` (`Email`, `Pass`, `Name`, `specialty`, `location_Doc`, `Fees`, `id`, `Phone`, `evaluation`, `img`, `Waiting_Time`) VALUES
-('ahmadalmasarwa@email.com', 'Azazaz1212', ' Ahmad Almasarwa', ' Dermatology and Venereology', 'Amman', 20, 1, '0784567891', 4, '../images/user.png', '30'),
-('mohammedmostafa@email.com', 'Azazaz1212', 'mohammad Mostafa', 'sex', 'Maan', 300, 2, '0794567891', 4, '../images/user.png', '30');
+('ahmadalmasarwa@email.com', 'Azazaz1212', ' Ahmad Almasarwa', 'Ear Nose and Throat', 'Amman', 20, 1, '0784567891', 4, '../images/user.png', '30'),
+('mohammedmostafa@email.com', 'Azazaz1212', 'mohammad Mostafa', 'Ear Nose and Throat', 'Maan', 300, 2, '0794567891', 4, '../images/user.png', '30'),
+('zaidallabadi@gmail.com ', 'Azazaz1212', 'DR.Abdalla Al-makahleh', 'Gynecology and Infertility', 'Maan', 20, 3, '0784567258', 4, '../images/user.png', '20'),
+('osamamo@gmail.com', 'Azazaz1212', 'osama malkawi', 'Ear Nose and Throat', 'Maan', 20, 4, '0784567457', 4, '../images/user.png', '30');
 
 -- --------------------------------------------------------
 
@@ -166,7 +160,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `doctor`
 --
 ALTER TABLE `doctor`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
