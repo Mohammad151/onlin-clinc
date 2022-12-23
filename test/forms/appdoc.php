@@ -143,16 +143,14 @@ session_start();
                   <h4><i class='bi bi-person-circle' aria-hidden='true' style='color:#3AB19B;'></i>" . $row['FName'] . ' ( ' . $row['Realitive_Realation'] . ' ) ' . " </h4>
                   <p>Age: " . $row['patient_age'] . " </p>
                   <p><i class='fa fa-map-marker' aria-hidden='true' style='color:#3AB19B;'></i>" . $row['Place'] . "</p>
-                  <p><span class='bi bi-clock-fill' aria-hidden='true' style='color:#3AB19B;'></i>" . $row['history'] . "</p>
+                  <p><span class='bi bi-clock-fill' aria-hidden='true' style='color:#3AB19B;'></i>" . $row['time_hour'] . "</p>
                   <p><i class='bi bi-telephone-fill' style='color:#3AB19B;'></i> <a href=tel:>" . $row['phone'] . "</a></p>
                   <p><i class='bi bi-chat-dots-fill' style='color:#3AB19B;'></i>" . $row['message_sent'] . "</p>
                   </div>
                   <div class='col-md-2 form-group card'>
                   </div>
-      
                   <div class='col-md-1 form-group'>
                     <a target='_blank' class='appointment-btn scrollto done' data-app_id = '" . $row['id'] . "'><span class='d-none d-md-inline'>  </span> Done</a>
-      
                   </div>
                 </div>
               </div>

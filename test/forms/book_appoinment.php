@@ -7,12 +7,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name'])) {
   $name = $_POST['name'];
   $Relative_Relation = $_POST['Relative_Relation'];
   $phone = $_POST['phone'];
-  $date = date("Y-m-d H:i:s", time());
+  $hour = $_POST['time'];
   $patient_age = $_POST['patient_age'];
   $message = $_POST['message'];
-  $sql = "INSERT INTO appointment(Fname,Realitive_Realation,phone,patient_age,message_sent,clinic,email,history) VALUES ('$name','$Relative_Relation','$phone','$patient_age','$message','$id','" . $_SESSION['Email'] . "','$date')";
+  $time = $_POST['date'];
+  $sql = "INSERT INTO appointment(Fname,Realitive_Realation,phone,patient_age,message_sent,clinic,email,time_hour,time_appointment) VALUES ('$name','$Relative_Relation','$phone','$patient_age','$message','$id','" . $_SESSION['Email'] . "','$hour','$time')";
   if (mysqli_query($conn, $sql)) {
-    echo '<script type="text/javascript">alert("Your request has been successfully submitted");</script>';
+    // echo '<script type="text/javascript">alert("Your request has been successfully submitted");</script>';
+    header('Location: my_appointment.php?note=Your request has been successfully submitted');
+    exit;
   } else {
     echo '<script type="text/javascript">alert("Invalid Information, Try again!");</script>';
   }
@@ -125,9 +128,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name'])) {
             <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required>
             <div class="validate"></div>
           </div>
-          <div class="col-md-4 form-group">
+          <!-- <div class="col-md-4 form-group">
             <input type="text" name="Relative_Relation" class="form-control" id="Relative Relation" placeholder="Relative Relation" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required>
             <div class="validate"></div>
+          </div> -->
+          <div class="col-md-4 form-group ">
+            <select name="Relative_Relation" class="form-select">
+              <option value="" class="fw-bold">Relatve</option>
+              <option value="Me">Me</option>
+              <option value="Son">Son</option>
+              <option value="Daughter">Daughter</option>
+              <option value="Dad">Dad</option>
+              <option value="Mom">Mom</option>
+              <option value="Brother">Brother</option>
+              <option value="Sister">Sister</option>
+            </select>
           </div>
           <!-- <div class="col-md-4 form-group mt-3 mt-md-0">
             <input type="email" class="form-control" name="id" id="email" value="" >
@@ -149,11 +164,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name'])) {
             </form> -->
         <div class="row">
 
-          <!-- <div class="col-md-4 form-group mt-3">
-            <input type="time" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+          <div class="col-md-4 form-group mt-3">
+            <input type="date" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
             <div class="validate"></div>
-          </div> -->
+          </div>
+          <div class="col-md-4 form-group mt-3">
+            <select name="time" id="time" class="form-select">
+              <option value="" class="fw-bold">Time</option>
+              <option value="9 AM" >9 AM</option>
+              <option value="10 AM" >10 AM</option>
+              <option value="11 AM" >11 AM</option>
+              <option value="12 AM" >12 AM</option>
+              <option value="1 PM" >1 PM</option>
+              <option value="2 PM" >2 PM</option>
+              <option value="3 PM" >3 PM</option>
+              <option value="4 PM" disabled>4 PM - Lunch Break</option>
+              <option value="5 PM" >5 PM</option>
+              <option value="6 PM" >6 PM</option>
+              <option value="7 PM" >7 PM</option>
+              <option value="8 PM" >8 PM</option>
 
+            </select>
+          </div>
           <div class="col-md-4 form-group mt-3">
             <input type="number" name="patient_age" class="form-control" id="Age" placeholder="patient's age" data-msg="Please enter at least 4 chars" min="1" max="110" required>
             <div class="validate"></div>

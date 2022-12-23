@@ -45,12 +45,17 @@ session_start();
   <div id="topbar" class="d-flex align-items-center fixed-top">
     <div class="container d-flex justify-content-between">
       <div class="contact-info d-flex align-items-center">
-        <i class="fa-solid fa-user"></i> <?php
-                                          if (isset($_SESSION["Name"])) {
-                                            echo $_SESSION["Name"];
-                                          } ?>
+        
+        <?php
+        if (isset($_SESSION["Name"])) {
+          echo '<i class="fa-solid fa-user mx-2"></i> ';
+        }
+            if (isset($_SESSION["Name"])) {
+              echo $_SESSION["Name"];
+            } 
+          ?>
         <!-- <i class="bi bi-phone"></i>
-         <?php
+        <?php
           // if(isset($_SESSION["Phone"])){
           //   echo $_SESSION["Phone"];
           //} 
@@ -84,7 +89,10 @@ session_start();
             echo '<li><a class="nav-link scrollto" href="login.php">Login</a></li>';
             echo '<li><a class="nav-link scrollto" href="sign_up.php">Sign Up</a></li>';
             echo '<li><a class="nav-link scrollto" href="logindoctors.php">Login Doctors</a></li>';
+            
+
           } else {
+            echo '<li><a class="nav-link scrollto" href="forms/my_appointment.php">My Appointment</a></li>';
             echo '<li><a class="nav-link scrollto" href="logout.php">log out</a></li>';
           }
           ?>
@@ -96,16 +104,16 @@ session_start();
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
       <?php
-      if (isset($_SESSION["Name"])) { 
-         if (isset($_SESSION["doc"])) { 
-          echo' <a href="forms/appdoc.php" class="appointment-btn scrollto">reservations</a>';
-         } else { 
+      if (isset($_SESSION["Name"])) {
+        if (isset($_SESSION["doc"])) {
+          echo ' <a href="forms/appdoc.php" class="appointment-btn scrollto">reservations</a>';
+        } else {
           echo '<a href="forms/make1.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>';
           // <!-- <a href="forms/book_appoinment.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a> -->
-         }
-      } else { 
-       echo' <a href="login.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>';
-        }?>
+        }
+      } else {
+        echo ' <a href="login.php" target="_blank" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>';
+      } ?>
 
     </div>
   </header><!-- End Header -->
