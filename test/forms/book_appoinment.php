@@ -179,7 +179,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name'])) {
               <option value="2 PM" >2 PM</option>
               <option value="3 PM" >3 PM</option>
               <option value="4 PM" disabled>4 PM - Lunch Break</option>
-              <option value="5 PM" >5 PM</option>
+              <option value="5 PM" >5 PM</option>0
               <option value="6 PM" >6 PM</option>
               <option value="7 PM" >7 PM</option>
               <option value="8 PM" >8 PM</option>

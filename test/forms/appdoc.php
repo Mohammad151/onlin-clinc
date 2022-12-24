@@ -59,8 +59,9 @@ session_start();
     .appointment-btn.scrollto {
       padding: 10px !important;
       position: relative;
-      top: 85%;
+      top: 65%;
       width: 159px;
+      text-align: center;
     }
 
     .header {
@@ -71,6 +72,9 @@ session_start();
       background: #222225;
       color: white;
       margin: 100px auto;
+    }
+    form .card i,form .card .bi::before,form .card .fa::before{
+      margin: 10px;
     }
   </style>
 </head>
@@ -126,29 +130,24 @@ session_start();
 
 
       </div>
-      <form action="" method="post" role="form" class="php-email-form">
-
-        <div class="row">
-          <div class="col-md-8" style="border:1px solid #3AB19B;display:inline-flex;">
-            <div class="col-md-3 form-group">
-              <img src="../images/user.png" style="width: 50%;">
-            </div>
+        
             <?php
             $sql = "SELECT * FROM appointment WHERE clinic = '" . $_SESSION['id'] . "' AND status = 0";
             $result = mysqli_query($conn, $sql);
             if (mysqli_num_rows($result) > 0) {
               while ($row = mysqli_fetch_Assoc($result)) {
                 echo
-                "<div class='col-md-4 form-group card'>
+                "<form action='' method='post' role='form' class='php-email-form'>
+                <div class='row'>
+                <div class='col-md-8' style='border:1px solid #3AB19B;display:inline-flex;'>
+                <div class='col-md-6 form-group card'>
                   <h4><i class='bi bi-person-circle' aria-hidden='true' style='color:#3AB19B;'></i>" . $row['FName'] . ' ( ' . $row['Realitive_Realation'] . ' ) ' . " </h4>
-                  <p>Age: " . $row['patient_age'] . " </p>
-                  <p><i class='fa fa-map-marker' aria-hidden='true' style='color:#3AB19B;'></i>" . $row['Place'] . "</p>
-                  <p><span class='bi bi-clock-fill' aria-hidden='true' style='color:#3AB19B;'></i>" . $row['time_hour'] . "</p>
+                  <p><i class='fa fa-birthday-cake' aria-hidden='true'  style='color:#3AB19B;></i>" . $row['patient_age'] . " </p>
+                  <p><i style='color:#3AB19B;' class='bi bi-clock-fill' aria-hidden='true' style='color:#3AB19B;'></i>" . $row['time_hour'] . "</p>
                   <p><i class='bi bi-telephone-fill' style='color:#3AB19B;'></i> <a href=tel:>" . $row['phone'] . "</a></p>
                   <p><i class='bi bi-chat-dots-fill' style='color:#3AB19B;'></i>" . $row['message_sent'] . "</p>
                   </div>
-                  <div class='col-md-2 form-group card'>
-                  </div>
+                  
                   <div class='col-md-1 form-group'>
                     <a target='_blank' class='appointment-btn scrollto done' data-app_id = '" . $row['id'] . "'><span class='d-none d-md-inline'>  </span> Done</a>
                   </div>

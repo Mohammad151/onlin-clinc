@@ -92,9 +92,13 @@ session_start();
             
 
           } else {
+            if (isset($_SESSION["doc"])) {
+              echo '<li><a class="nav-link scrollto" href="logout.php">log out</a></li>';
+            }else{
             echo '<li><a class="nav-link scrollto" href="forms/my_appointment.php">My Appointment</a></li>';
             echo '<li><a class="nav-link scrollto" href="logout.php">log out</a></li>';
           }
+        }
           ?>
 
 

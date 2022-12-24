@@ -167,14 +167,14 @@ session_start();
     <div class="container">
       <div class="section-title">
         <h2 class="header">My Appointments</h2>
-        <div class="alert alert-success alert-dismissible fade show d-flex justify-content-center align-items-center" role="alert">
+        <div class="alert alert-success alert-dismissible fade show d-flex justify-content-center align-items-center" id="success" role="alert">
             <?php
                 if($_SERVER['REQUEST_METHOD'] == 'GET'){
                     @$note = $_REQUEST['note'];
                     echo $note;
                 }
                 ?>
-                <button type="button" class="btn close float-end" data-dismiss="alert" aria-label="Close">
+                <button type="button" id="closeFun" class="btn close float-end" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
         </div>
@@ -243,25 +243,36 @@ session_start();
         }
       } else echo "<div>No Doctors </div>"; ?>
     <div>
+      <?php
+  $sql = 'SELECT * FROM appointment ORDER BY id DESC LIMIT 1';
+  $result = mysqli_query($conn, $sql);
+            if (mysqli_num_rows($result) > 0) {
+              while ($row = mysqli_fetch_Assoc($result)) {
+              
+            ?>
+
       <form method='post' role='form' class='php-email-form'>
         <div class='row'>
             <div class='col-md-5' style='border:1px solid #3AB19B;display:inline-flex;'>
                 <div class='col-md-4 form-group card'>
                 <h3 class="text-decoration-underline">Patient Info</h3>
-              <h4><i class='bi bi-person-circle' aria-hidden='true' style='color:#3AB19B;'></i> </h4>
-              <p>Relative : </p>
-              <p>Age : </p>
-              <p><i class='fa-solid fa-clock' style='color:#3AB19B;'></i> </p>
+              <h4><i class='bi bi-person-circle' aria-hidden='true' style='color:#3AB19B;'></i><?php echo $row['FName']; ?> </h4>
+              <p>Relative : <?php echo $row['Realitive_Realation']; ?></p>
+              <p>Age :  <?php echo $row['patient_age']; ?></p>
+              <p><i class='fa-solid fa-clock' style='color:#3AB19B;'></i> <?php echo $row['time_hour']; ?></p>
               
               
-              <p><i class='bi bi-telephone-fill' style='color:#3AB19B;'></i><a href='tel:'></a></p>
+              <p><i class='bi bi-telephone-fill' style='color:#3AB19B;'></i><a href='tel:'><?php echo $row['phone']; ?></a></p>
               <div class="d-flex mx-auto">
-                  <button type="button" class="btn btn-danger mx-2">Delete</button>
-                  <button type="button" class="btn btn-info text-white">Edit</button>
+                  <button type="button" class="btn btn-danger mx-2">Cancel</button>
+                 
               </div>
             
       </div>
-      
+  <?php  }
+  }
+  
+        ?>
 
     </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
