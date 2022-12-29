@@ -258,7 +258,7 @@ session_start();
                 <h3 class="text-decoration-underline">Patient Info</h3>
               <h4><i class='bi bi-person-circle' aria-hidden='true' style='color:#3AB19B;'></i><?php echo $row['FName']; ?> </h4>
               <p>Relative : <?php echo $row['Realitive_Realation']; ?></p>
-              <p>Age :  <?php echo $row['patient_age']; ?></p>
+              <p><i class='fa fa-birthday-cake' style='color:#3AB19B;'></i><?php echo $row['patient_age']; ?></p>
               <p><i class='fa-solid fa-clock' style='color:#3AB19B;'></i> <?php echo $row['time_hour']; ?></p>
               
               
