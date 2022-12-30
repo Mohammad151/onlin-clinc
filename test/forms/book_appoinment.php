@@ -12,7 +12,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name'])) {
   $message = $_POST['message'];
   $time = $_POST['date'];
   $sql = "INSERT INTO appointment(Fname,Realitive_Realation,phone,patient_age,message_sent,clinic,email,time_hour,time_appointment) VALUES ('$name','$Relative_Relation','$phone','$patient_age','$message','$id','" . $_SESSION['Email'] . "','$hour','$time')";
-  if (mysqli_query($conn, $sql)) {
+  $sql2 = "UPDATE doc_time Set isBooking = 1 WHERE times = '$hour' AND id = '" . $_SESSION['appid'] . "' ";
+  if (mysqli_query($conn, $sql) || mysqli_query($conn, $sql2)) {
+
     // echo '<script type="text/javascript">alert("Your request has been successfully submitted");</script>';
     header('Location: my_appointment.php?note=Your request has been successfully submitted');
     exit;
@@ -171,6 +173,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name'])) {
           <div class="col-md-4 form-group mt-3">
             <select name="time" id="time" class="form-select">
               <option value="" class="fw-bold">Time</option>
+              <?php
+              $sql = "SELECT * FROM doc_time where id = '" . $_COOKIE['appid'] . "'";
+              $result = mysqli_query($conn, $sql);
+              if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_Assoc($result)) {
+                  if ($row['isBooking'] == 0) {
+                    echo "<option value='" . $row['times'] . "' >" . $row['times'] . "</option>";
+                  } else {
+                    echo "<option value='" . $row['times'] . "' disabled >" . $row['times'] . " - reserved </option>";
+                  }
+                }
+              }
+              ?>
+              <!-- <option value="" class="fw-bold">Time</option>
               <option value="9 AM" >9 AM</option>
               <option value="10 AM" >10 AM</option>
               <option value="11 AM" >11 AM</option>
@@ -182,7 +198,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name'])) {
               <option value="5 PM" >5 PM</option>0
               <option value="6 PM" >6 PM</option>
               <option value="7 PM" >7 PM</option>
-              <option value="8 PM" >8 PM</option>
+              <option value="8 PM" >8 PM</option> -->
 
             </select>
           </div>

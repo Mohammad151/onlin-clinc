@@ -73,7 +73,10 @@ session_start();
       color: white;
       margin: 100px auto;
     }
-    form .card i,form .card .bi::before,form .card .fa::before{
+
+    form .card i,
+    form .card .bi::before,
+    form .card .fa::before {
       margin: 10px;
     }
   </style>
@@ -130,14 +133,14 @@ session_start();
 
 
       </div>
-        
-            <?php
-            $sql = "SELECT * FROM appointment WHERE clinic = '" . $_SESSION['id'] . "' AND status = 0";
-            $result = mysqli_query($conn, $sql);
-            if (mysqli_num_rows($result) > 0) {
-              while ($row = mysqli_fetch_Assoc($result)) {
-                echo
-                "<form action='' method='post' role='form' class='php-email-form'>
+
+      <?php
+      $sql = "SELECT * FROM appointment WHERE clinic = '" . $_SESSION['id'] . "' AND status = 0";
+      $result = mysqli_query($conn, $sql);
+      if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_Assoc($result)) {
+          echo
+          "<form action='' method='post' role='form' class='php-email-form'>
                 <div class='row'>
                 <div class='col-md-8' style='border:1px solid #3AB19B;display:inline-flex;'>
                 <div class='col-md-6 form-group card'>
@@ -160,11 +163,11 @@ session_start();
               </div>
             </form>
                   ";
-              }
-            }
-            ?>
+        }
+      }
+      ?>
 
-          </div>
+    </div>
   </section><!-- End Appointment Section -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script language="JavaScript" type="text/javascript">
@@ -208,14 +211,14 @@ session_start();
   </footer><!-- End Footer -->
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="../assets/js/main.js"></script>
 
 </body>
 

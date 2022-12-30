@@ -180,81 +180,16 @@ session_start();
         </div>
       </div>
       <?php
-      if (isset($_SESSION["clinic"])) {
-        $sp = $_SESSION['clinic'];
-      } else  $sp = '';
-      if (isset($_SESSION["DocLoc"]))
-        $loc = $_SESSION['DocLoc'];
-      else $loc = '';
       // $SQL = "SELECT * FROM doctor WHERE specialty = '$sp' AND location_Doc = '$loc'";
-      $SQL = "SELECT * FROM doctor WHERE specialty = '$sp' AND location_Doc = '$loc'";
 
-      $Result = mysqli_query($conn, $SQL);
-      if (mysqli_num_rows($Result) > 0) {
-        while ($row = mysqli_fetch_Assoc($Result)) {
-          $sql1 = "SELECT SUM(rating)/Count(*) as rat FROM rating WHERE Doc_id =" . $row['id'] . "";
-          $Result1 = mysqli_query($conn, $sql1);
-          $row1 = mysqli_fetch_Assoc($Result1);
+      $sql = "SELECT * FROM appointment Where email = '" . $_SESSION["Email"] . "'";
+      $result = mysqli_query($conn, $sql);
+      if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_Assoc($result)) {
           echo "
-            <form method='post' role='form' class='php-email-form'>
-        <div class='row'>
-          <div class='col-md-5' style='border:1px solid #3AB19B;display:inline-flex;'>
-          <div class='col-md-8 form-group card'>
-          <h3 class='text-decoration-underline'>DR. Info</h3>
-              <h4><i class='bi bi-person-circle' aria-hidden='true' style='color:#3AB19B;'></i> " . $row['Name'] . " </h4>
-            <div class='rating'>";
-          $rat = intval($row1['rat']);
-          if ($rat == 5) {
-            echo "
-              <input type='radio' name='rating' value='5' id='5' checked ><label Class='ratingdone' for='5'>☆</label>";
-          } else echo "<input type='radio' name='rating' value='5' id='5'><label for='5'>☆</label>";
-          if ($rat == 4) {
-            echo "
-              <input type='radio' name='rating' value='4' id='4' checked><label Class='ratingdone' for='4'>☆</label>";
-          } else echo "<input type='radio' name='rating' value='4' id='4'><label for='4'>☆</label>";
-          if ($rat == 3) {
-            echo "
-              <input type='radio' name='rating' value='3' id='3' checked><label Class='ratingdone' for='3'>☆</label>";
-          } else echo "<input type='radio' name='rating' value='3' id='3'><label for='3'>☆</label>";
-          if ($rat == 2) {
-            echo "
-              <input type='radio' name='rating' value='2' id='2' checked><label Class='ratingdone'for='2'>☆</label>";
-          } else echo "<input type='radio' name='rating' value='2' id='2'><label for='2'>☆</label>";
-          if ($rat == 1) {
-            echo "
-              <input type='radio' name='rating' value='1' id='1' checked><label Class='ratingdone'for='1'>☆</label>";
-          } else echo "<input type='radio' name='rating' value='1' id='1'><label for='1'>☆</label>";
-
-          echo "</div>
-              <p><i class='fa fa-stethoscope' aria-hidden='true' style='color:#3AB19B;'></i> " . $row['specialty'] . "</p>
-              <p><i class='fa fa-map-marker' aria-hidden='true' style='color:#3AB19B;'></i> " . $row['location_Doc'] . "</p>
-              </div>
-            
-            
-          </div>
-        </div>
-         <div class='mb-3'>
-              <div class='loading'>Loading</div>
-              <div class='error-message'></div>
-              <div class='sent-message'>Your appointment request has been sent successfully. Thank you!</div>
-
-            </form>
-            ";
-        }
-      } else echo "<div>No Doctors </div>"; ?>
-      <div>
-        <?php
-        $sql = "SELECT * FROM appointment Where email = '" . $_SESSION["Email"] . "'";
-        $result = mysqli_query($conn, $sql);
-        if (mysqli_num_rows($result) > 0) {
-          while ($row = mysqli_fetch_Assoc($result)) {
-
-            echo "
-
-      <form method='post' role='form' class='php-email-form'>
         <div class='row'>
             <div class='col-md-5' style='border:1px solid #3AB19B;display:inline-flex;'>
-                <div class='col-md-4 form-group card'>
+                <div class='col-md-8 form-group card'>
                 <h3 class='text-decoration-underline'>Patient Info</h3>
               <h4><i class='bi bi-person-circle' aria-hidden='true' style='color:#3AB19B;'></i>" . $row['FName'] . "</h4>
               <p>Relative : " . $row['Realitive_Realation'] . "</p>
@@ -264,35 +199,104 @@ session_start();
               
               <p><i class='bi bi-telephone-fill' style='color:#3AB19B;'></i><a href='tel:'>" . $row['phone'] . "</a></p>
               <div class='d-flex mx-auto'>
-                  <button type='button' class='btn btn-danger mx-2'>Cancel</button>
+                  <button type='button' class='btn btn-danger mx-2 cancel' data-app_id = '" . $row['id'] . "' data-times = '" . $row['time_hour'] . "'>Cancel</button>
                  
               </div>
-            
-      </div>
+              </div>
+              </div>
       ";
+
+          $SQL = "SELECT * FROM doctor WHERE id in (SELECT clinic FROM appointment WHERE email = '" . $_SESSION['Email'] . "')";
+
+          $Result = mysqli_query($conn, $SQL);
+          if (mysqli_num_rows($Result) > 0) {
+            while ($row = mysqli_fetch_Assoc($Result)) {
+              $sql1 = "SELECT SUM(rating)/Count(*) as rat FROM rating WHERE Doc_id =" . $row['id'] . "";
+              $Result1 = mysqli_query($conn, $sql1);
+              $row1 = mysqli_fetch_Assoc($Result1);
+              echo "
+          <div class='col-md-5' style='border:1px solid #3AB19B;display:inline-flex;'>
+          <div class='col-md-8 form-group card'>
+          <h3 class='text-decoration-underline'>DR. Info</h3>
+              <h4><i class='bi bi-person-circle' aria-hidden='true' style='color:#3AB19B;'></i> " . $row['Name'] . " </h4>
+            <div class='rating'>";
+              $rat = intval($row1['rat']);
+              if ($rat == 5) {
+                echo "
+              <input type='radio' name='rating' value='5' id='5' checked ><label Class='ratingdone rat' for='5' data-rating_Value = 5 data-doc_id = " . $row['id'] . ">☆</label>";
+              } else echo "<input type='radio' name='rating' value='5' id='5'><label for='5' class='rat' data-rating_Value = 5 data-doc_id = " . $row['id'] . ">☆</label>";
+              if ($rat == 4) {
+                echo "
+              <input type='radio' name='rating' value='4' id='4' checked><label Class='ratingdone rat' for='4' data-rating_Value = 4 data-doc_id = " . $row['id'] . ">☆</label>";
+              } else echo "<input type='radio' name='rating' value='4' id='4'><label for='4' class='rat' data-rating_Value = 4 data-doc_id = " . $row['id'] . ">☆</label>";
+              if ($rat == 3) {
+                echo "
+              <input type='radio' name='rating' value='3' id='3' checked><label Class='ratingdone rat' for='3' data-rating_Value = 3 data-doc_id = " . $row['id'] . ">☆</label>";
+              } else echo "<input type='radio' name='rating' value='3' id='3'><label for='3' class='rat' data-rating_Value = 3 data-doc_id = " . $row['id'] . ">☆</label>";
+              if ($rat == 2) {
+                echo "
+              <input type='radio' name='rating' value='2' id='2' checked><label Class='ratingdone rat'for='2' data-rating_Value = 2data-doc_id = " . $row['id'] . ">☆</label>";
+              } else echo "<input type='radio' name='rating' value='2' id='2'><label for='2' data-rating_Value = 3 class='rat' data-rating_Value = 2data-doc_id = " . $row['id'] . ">☆</label>";
+              if ($rat == 1) {
+                echo "
+              <input type='radio' name='rating' value='1' id='1' checked><label Class='ratingdone rat' data-rating_Value = 1 for='1' data-doc_id = " . $row['id'] . ">☆</label>";
+              } else echo "<input type='radio' name='rating' value='1' id='1'><label for='1' class='rat' data-rating_Value = 1 data-doc_id = " . $row['id'] . ">☆</label>";
+              echo "</div>
+              <p><i class='fa fa-stethoscope' aria-hidden='true' style='color:#3AB19B;'></i> " . $row['specialty'] . "</p>
+              <p><i class='fa fa-map-marker' aria-hidden='true' style='color:#3AB19B;'></i> " . $row['location_Doc'] . "</p>
+              </div>
+            
+              </div>
+              </div>  
+
+
+            ";
+            }
           }
         }
+      } else echo "<div>No Doctors </div>";
 
-        ?>
-
-      </div>
-      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+      ?>
       <script language="JavaScript" type="text/javascript">
-        document.querySelectorAll(".make").forEach((element) => {
+        document.querySelectorAll(".cancel").forEach((element) => {
           element.addEventListener("click", () => {
-            const id = element.dataset.clinc_id;
+            const id = element.dataset.app_id;
+            const times = element.dataset.times;
+            $.ajax({
+              url: "appointment1.php",
+              type: "post",
+              data: {
+                cancel: 1,
+                times,
+                id,
+              },
+              success() {
+                alert("Appointment Canceled");
+                element.style.display = "none";
+              },
+            });
+          });
+        });
+
+        document.querySelectorAll(".rat").forEach((element) => {
+          element.addEventListener("click", () => {
+            const rating_Value = element.getAttribute("data-rating_Value");
+            const id = element.dataset.doc_id;
+            console.log(rating_Value);
             console.log(id);
-            document.cookie = `appid=${id}`;
-            // $.ajax({
-            //   url: "appointment1.php",
-            //   type: "post",
-            //   data: {
-            //     id,
-            //   },
-            //   success() {
-            //     window.location.href = "book_appoinment.php";
-            //   },
-            // });
+            $.ajax({
+              url: "appointment1.php",
+              type: "POST",
+              date: {
+                ratingdone: 1,
+                rating_Value,
+                id,
+              },
+              success(response) {
+                //console.log(response);
+                alert("Rating Done");
+              },
+            });
           });
         });
       </script>
@@ -320,16 +324,16 @@ session_start();
   </footer><!-- End Footer -->
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
   <script type="module" src="../assets/js/main.js" defer></script>
   <!-- JS BOOTSTRAP -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
