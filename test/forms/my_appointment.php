@@ -168,18 +168,18 @@ session_start();
       <div class="section-title">
         <h2 class="header">My Appointments</h2>
         <div class="alert alert-success alert-dismissible fade show d-flex justify-content-center align-items-center" id="success" role="alert">
-            <?php
-                if($_SERVER['REQUEST_METHOD'] == 'GET'){
-                    @$note = $_REQUEST['note'];
-                    echo $note;
-                }
-                ?>
-                <button type="button" id="closeFun" class="btn close float-end" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+          <?php
+          if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+            @$note = $_REQUEST['note'];
+            echo $note;
+          }
+          ?>
+          <button type="button" id="closeFun" class="btn close float-end" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
       </div>
-        <?php
+      <?php
       if (isset($_SESSION["clinic"])) {
         $sp = $_SESSION['clinic'];
       } else  $sp = '';
@@ -242,59 +242,60 @@ session_start();
             ";
         }
       } else echo "<div>No Doctors </div>"; ?>
-    <div>
-      <?php
-  $sql = 'SELECT * FROM appointment ORDER BY id DESC LIMIT 1';
-  $result = mysqli_query($conn, $sql);
-            if (mysqli_num_rows($result) > 0) {
-              while ($row = mysqli_fetch_Assoc($result)) {
-              
-            ?>
+      <div>
+        <?php
+        $sql = "SELECT * FROM appointment Where email = '" . $_SESSION["Email"] . "'";
+        $result = mysqli_query($conn, $sql);
+        if (mysqli_num_rows($result) > 0) {
+          while ($row = mysqli_fetch_Assoc($result)) {
+
+            echo "
 
       <form method='post' role='form' class='php-email-form'>
         <div class='row'>
             <div class='col-md-5' style='border:1px solid #3AB19B;display:inline-flex;'>
                 <div class='col-md-4 form-group card'>
-                <h3 class="text-decoration-underline">Patient Info</h3>
-              <h4><i class='bi bi-person-circle' aria-hidden='true' style='color:#3AB19B;'></i><?php echo $row['FName']; ?> </h4>
-              <p>Relative : <?php echo $row['Realitive_Realation']; ?></p>
-              <p><i class='fa fa-birthday-cake' style='color:#3AB19B;'></i><?php echo $row['patient_age']; ?></p>
-              <p><i class='fa-solid fa-clock' style='color:#3AB19B;'></i> <?php echo $row['time_hour']; ?></p>
+                <h3 class='text-decoration-underline'>Patient Info</h3>
+              <h4><i class='bi bi-person-circle' aria-hidden='true' style='color:#3AB19B;'></i>" . $row['FName'] . "</h4>
+              <p>Relative : " . $row['Realitive_Realation'] . "</p>
+              <p><i class='fa fa-birthday-cake' style='color:#3AB19B;'></i>" . $row['patient_age'] . "</p>
+              <p><i class='fa-solid fa-clock' style='color:#3AB19B;'></i>" . $row['time_hour'] . "</p>
               
               
-              <p><i class='bi bi-telephone-fill' style='color:#3AB19B;'></i><a href='tel:'><?php echo $row['phone']; ?></a></p>
-              <div class="d-flex mx-auto">
-                  <button type="button" class="btn btn-danger mx-2">Cancel</button>
+              <p><i class='bi bi-telephone-fill' style='color:#3AB19B;'></i><a href='tel:'>" . $row['phone'] . "</a></p>
+              <div class='d-flex mx-auto'>
+                  <button type='button' class='btn btn-danger mx-2'>Cancel</button>
                  
               </div>
             
       </div>
-  <?php  }
-  }
-  
+      ";
+          }
+        }
+
         ?>
 
-    </div>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script language="JavaScript" type="text/javascript">
-      document.querySelectorAll(".make").forEach((element) => {
-        element.addEventListener("click", () => {
-          const id = element.dataset.clinc_id;
-          console.log(id);
-          document.cookie = `appid=${id}`;
-          // $.ajax({
-          //   url: "appointment1.php",
-          //   type: "post",
-          //   data: {
-          //     id,
-          //   },
-          //   success() {
-          //     window.location.href = "book_appoinment.php";
-          //   },
-          // });
+      </div>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+      <script language="JavaScript" type="text/javascript">
+        document.querySelectorAll(".make").forEach((element) => {
+          element.addEventListener("click", () => {
+            const id = element.dataset.clinc_id;
+            console.log(id);
+            document.cookie = `appid=${id}`;
+            // $.ajax({
+            //   url: "appointment1.php",
+            //   type: "post",
+            //   data: {
+            //     id,
+            //   },
+            //   success() {
+            //     window.location.href = "book_appoinment.php";
+            //   },
+            // });
+          });
         });
-      });
-    </script>
+      </script>
   </section><!-- End Appointment Section -->
 
   <!-- ======= Footer ======= -->
@@ -327,10 +328,10 @@ session_start();
 
   <!-- Template Main JS File -->
   <script type="module" src="../assets/js/main.js" defer></script>
-<!-- JS BOOTSTRAP -->
+  <!-- JS BOOTSTRAP -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
 
