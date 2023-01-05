@@ -135,7 +135,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name'])) {
             <div class="validate"></div>
           </div> -->
           <div class="col-md-4 form-group ">
-            <select name="Relative_Relation" class="form-select">
+            <select name="Relative_Relation" class="form-select" required>
               <option value="" class="fw-bold">Relatve</option>
               <option value="Me">Me</option>
               <option value="Son">Son</option>
@@ -167,11 +167,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name'])) {
         <div class="row">
 
           <div class="col-md-4 form-group mt-3">
-            <input type="date" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+            <input  type="date" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required>
             <div class="validate"></div>
           </div>
           <div class="col-md-4 form-group mt-3">
-            <select name="time" id="time" class="form-select">
+            <select name="time" id="time" class="form-select" required>
               <option value="" class="fw-bold">Time</option>
               <?php
               $sql = "SELECT * FROM doc_time where id = '" . $_COOKIE['appid'] . "'";
@@ -253,6 +253,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name'])) {
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+  <script language="javascript">
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0');
+        var yyyy = today.getFullYear();
+
+        today = yyyy + '-' + mm + '-' + dd;
+        $('#date').attr('min',today);
+        </script>
+
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>

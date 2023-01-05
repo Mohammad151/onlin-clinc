@@ -21,5 +21,7 @@ if (isset($_POST['cancel'])) {
     $result = mysqli_query($conn, $sql);
     $sql = "UPDATE doc_time SET isBooking = 0 WHERE times = '" . $_POST['times'] . "' AND id = '" . $_POST['id'] . "'";
     $result = mysqli_query($conn, $sql);
+
+
 }
 ?>

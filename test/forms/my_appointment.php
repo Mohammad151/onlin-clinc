@@ -187,24 +187,22 @@ session_start();
       if (mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_Assoc($result)) {
           echo "
+
         <div class='row'>
             <div class='col-md-5' style='border:1px solid #3AB19B;display:inline-flex;'>
-                <div class='col-md-8 form-group card'>
-                <h3 class='text-decoration-underline'>Patient Info</h3>
+            <div class='col-md-8 form-group card'>
+              <h3 class='text-decoration-underline'>Patient Info</h3>
               <h4><i class='bi bi-person-circle' aria-hidden='true' style='color:#3AB19B;'></i>" . $row['FName'] . "</h4>
               <p>Relative : " . $row['Realitive_Realation'] . "</p>
               <p><i class='fa fa-birthday-cake' style='color:#3AB19B;'></i>" . $row['patient_age'] . "</p>
               <p><i class='fa-solid fa-clock' style='color:#3AB19B;'></i>" . $row['time_hour'] . "</p>
-              
-              
               <p><i class='bi bi-telephone-fill' style='color:#3AB19B;'></i><a href='tel:'>" . $row['phone'] . "</a></p>
               <div class='d-flex mx-auto'>
-                  <button type='button' class='btn btn-danger mx-2 cancel' data-app_id = '" . $row['id'] . "' data-times = '" . $row['time_hour'] . "'>Cancel</button>
-                 
+              <button type='button' class='btn btn-danger mx-2 cancel' data-app_id = '" . $row['id'] . "' data-times = '" . $row['time_hour'] . "'>Cancel</button>
               </div>
               </div>
               </div>
-      ";
+              ";
 
           $SQL = "SELECT * FROM doctor WHERE id in (SELECT clinic FROM appointment WHERE email = '" . $_SESSION['Email'] . "')";
 
@@ -262,6 +260,8 @@ session_start();
           element.addEventListener("click", () => {
             const id = element.dataset.app_id;
             const times = element.dataset.times;
+            location.reload();
+
             $.ajax({
               url: "appointment1.php",
               type: "post",
