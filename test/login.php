@@ -1,6 +1,14 @@
 <?php
 include_once "connection.php";
+
 session_start();
+if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] >300)) {
+   // last request was more than 30 minutes ago
+   session_unset();     // unset $_SESSION variable for the run-time 
+   session_destroy();   // destroy session data in storage
+}
+$_SESSION['LAST_ACTIVITY'] = time(); // update last activity time stamp
+
 
 // if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //    $email = mysqli_real_escape_string($conn, $_POST["email"]);
@@ -66,6 +74,7 @@ session_start();
          </a>
       </div>
       <?php
+
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
          $email = mysqli_real_escape_string($conn, $_POST["email"]);
          $pass = mysqli_real_escape_string($conn, $_POST["password"]);
@@ -105,7 +114,6 @@ session_start();
          }
       }
 
-      //khsjhfkdhkshfkhdskghksdhg
       ?>
 
       <form method="POST" action="" class="form">
