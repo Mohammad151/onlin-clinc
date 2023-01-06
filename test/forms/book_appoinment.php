@@ -12,8 +12,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name'])) {
   $message = $_POST['message'];
   $time = $_POST['date'];
   $sql = "INSERT INTO appointment(Fname,Realitive_Realation,phone,patient_age,message_sent,clinic,email,time_hour,time_appointment) VALUES ('$name','$Relative_Relation','$phone','$patient_age','$message','$id','" . $_SESSION['Email'] . "','$hour','$time')";
-  $sql2 = "UPDATE doc_time Set isBooking = 1 WHERE times = '$hour' AND id = '" . $_SESSION['appid'] . "' ";
+  $sql2 = "UPDATE doc_time Set isBooking = 1 WHERE times_d = '$hour' AND id = '" . $_COOKIE['appid'] . "' ";
   if (mysqli_query($conn, $sql) || mysqli_query($conn, $sql2)) {
+
 
     // echo '<script type="text/javascript">alert("Your request has been successfully submitted");</script>';
     header('Location: my_appointment.php?note=Your request has been successfully submitted');
@@ -167,7 +168,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name'])) {
         <div class="row">
 
           <div class="col-md-4 form-group mt-3">
-            <input  type="date" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required>
+            <input type="date" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required>
             <div class="validate"></div>
           </div>
           <div class="col-md-4 form-group mt-3">
@@ -179,9 +180,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name'])) {
               if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_Assoc($result)) {
                   if ($row['isBooking'] == 0) {
-                    echo "<option value='" . $row['times'] . "' >" . $row['times'] . "</option>";
+                    echo "<option value='" . $row['times_d'] . "' >" . $row['times_d'] . "</option>";
                   } else {
-                    echo "<option value='" . $row['times'] . "' disabled >" . $row['times'] . " - reserved </option>";
+                    echo "<option value='" . $row['times_d'] . "' disabled >" . $row['times_d'] . " - reserved </option>";
                   }
                 }
               }
@@ -255,14 +256,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name'])) {
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
   <script language="javascript">
-        var today = new Date();
-        var dd = String(today.getDate()).padStart(2, '0');
-        var mm = String(today.getMonth() + 1).padStart(2, '0');
-        var yyyy = today.getFullYear();
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var yyyy = today.getFullYear();
 
-        today = yyyy + '-' + mm + '-' + dd;
-        $('#date').attr('min',today);
-        </script>
+    today = yyyy + '-' + mm + '-' + dd;
+    $('#date').attr('min', today);
+  </script>
 
 
   <!-- Template Main JS File -->

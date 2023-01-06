@@ -202,9 +202,10 @@ session_start();
               </div>
               </div>
               </div>
+             
               ";
 
-          $SQL = "SELECT * FROM doctor WHERE id in (SELECT clinic FROM appointment WHERE email = '" . $_SESSION['Email'] . "')";
+          $SQL = "SELECT * FROM doctor WHERE id = " . $row['clinic'] . "";
 
           $Result = mysqli_query($conn, $SQL);
           if (mysqli_num_rows($Result) > 0) {
@@ -242,11 +243,11 @@ session_start();
               echo "</div>
               <p><i class='fa fa-stethoscope' aria-hidden='true' style='color:#3AB19B;'></i> " . $row['specialty'] . "</p>
               <p><i class='fa fa-map-marker' aria-hidden='true' style='color:#3AB19B;'></i> " . $row['location_Doc'] . "</p>
-              </div>
             
               </div>
-              </div>  
-
+              </div>
+              </div>
+              <br>  
 
             ";
             }
@@ -255,51 +256,52 @@ session_start();
       } else echo "<div>No Doctors </div>";
 
       ?>
-      <script language="JavaScript" type="text/javascript">
-        document.querySelectorAll(".cancel").forEach((element) => {
-          element.addEventListener("click", () => {
-            const id = element.dataset.app_id;
-            const times = element.dataset.times;
-            location.reload();
+    </div>
+    <script language="JavaScript" type="text/javascript">
+      document.querySelectorAll(".cancel").forEach((element) => {
+        element.addEventListener("click", () => {
+          const id = element.dataset.app_id;
+          const times = element.dataset.times;
+          location.reload();
 
-            $.ajax({
-              url: "appointment1.php",
-              type: "post",
-              data: {
-                cancel: 1,
-                times,
-                id,
-              },
-              success() {
-                alert("Appointment Canceled");
-                element.style.display = "none";
-              },
-            });
+          $.ajax({
+            url: "appointment1.php",
+            type: "post",
+            data: {
+              cancel: 1,
+              times,
+              id,
+            },
+            success() {
+              alert("Appointment Canceled");
+              element.style.display = "none";
+            },
           });
         });
+      });
 
-        document.querySelectorAll(".rat").forEach((element) => {
-          element.addEventListener("click", () => {
-            const rating_Value = element.getAttribute("data-rating_Value");
-            const id = element.dataset.doc_id;
-            console.log(rating_Value);
-            console.log(id);
-            $.ajax({
-              url: "appointment1.php",
-              type: "POST",
-              date: {
-                ratingdone: 1,
-                rating_Value,
-                id,
-              },
-              success(response) {
-                //console.log(response);
-                alert("Rating Done");
-              },
-            });
+      document.querySelectorAll(".rat").forEach((element) => {
+        element.addEventListener("click", () => {
+          const rating_Value = element.getAttribute("data-rating_Value");
+          const id = element.dataset.doc_id;
+          console.log(rating_Value);
+          console.log(id);
+          $.ajax({
+            url: "appointment1.php",
+            type: "POST",
+            date: {
+              ratingdone: 1,
+              rating_Value,
+              id,
+            },
+            success(response) {
+              //console.log(response);
+              alert("Rating Done");
+            },
           });
         });
-      </script>
+      });
+    </script>
   </section><!-- End Appointment Section -->
 
   <!-- ======= Footer ======= -->

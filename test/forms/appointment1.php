@@ -19,9 +19,7 @@ if (isset($_POST['done'])) {
 if (isset($_POST['cancel'])) {
     $sql = "DELETE FROM appointment WHERE id = '" . $_POST['id'] . "'";
     $result = mysqli_query($conn, $sql);
-    $sql = "UPDATE doc_time SET isBooking = 0 WHERE times = '" . $_POST['times'] . "' AND id = '" . $_POST['id'] . "'";
+    $sql = "UPDATE doc_time SET isBooking = 0 WHERE times_d = '" . $_POST['times'] . "' AND id = '" . $_POST['id'] . "'";
     $result = mysqli_query($conn, $sql);
-
-
 }
 ?>
