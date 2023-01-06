@@ -1,7 +1,7 @@
 <?php
 @include_once "connection.php";
 session_start();
-
+//
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name'])) {
   $id = $_COOKIE['appid'];
   $name = $_POST['name'];
@@ -12,8 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name'])) {
   $message = $_POST['message'];
   $time = $_POST['date'];
   $sql = "INSERT INTO appointment(Fname,Realitive_Realation,phone,patient_age,message_sent,clinic,email,time_hour,time_appointment) VALUES ('$name','$Relative_Relation','$phone','$patient_age','$message','$id','" . $_SESSION['Email'] . "','$hour','$time')";
-  $sql2 = "UPDATE doc_time Set isBooking = 1 WHERE times_d = '$hour' AND id = '" . $_COOKIE['appid'] . "' ";
-  if (mysqli_query($conn, $sql) || mysqli_query($conn, $sql2)) {
+  $sql2 = "UPDATE doc_time Set isBooking = 1 WHERE times_d = '" . $hour . "' AND id = '" . $_COOKIE['appid'] . "'";
+  if (mysqli_query($conn, $sql) && mysqli_query($conn, $sql2)) {
 
 
     // echo '<script type="text/javascript">alert("Your request has been successfully submitted");</script>';

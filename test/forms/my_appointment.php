@@ -263,7 +263,6 @@ session_start();
           const id = element.dataset.app_id;
           const times = element.dataset.times;
           location.reload();
-
           $.ajax({
             url: "appointment1.php",
             type: "post",
@@ -289,13 +288,13 @@ session_start();
           $.ajax({
             url: "appointment1.php",
             type: "POST",
-            date: {
+            data: {
               ratingdone: 1,
               rating_Value,
               id,
             },
             success(response) {
-              //console.log(response);
+              console.log(response);
               alert("Rating Done");
             },
           });

@@ -7,8 +7,9 @@ if (isset($_POST['ratingdone'])) {
     $id = $_POST['id'];
     $email = $_SESSION["Email"];
     $ratvalue = $_POST['rating_Value'];
-    $sql = "INSERT INTO rating (Doc_id,user_Email,rating) VALUES ( '$id' , '$email', '$ratvalue' )";
+    $sql = "INSERT INTO rating (Doc_id,user_Email,rating) VALUES ( '" . $id . "' , '" . $email . "', '" . $ratvalue . "' )";
     $result = mysqli_query($conn, $sql);
+    echo $result;
 }
 
 if (isset($_POST['done'])) {
