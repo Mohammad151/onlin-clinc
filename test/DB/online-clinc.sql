@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 24, 2022 at 12:35 AM
+-- Generation Time: Jan 21, 2023 at 01:48 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -31,7 +31,7 @@ CREATE TABLE `appointment` (
   `FName` varchar(255) NOT NULL,
   `Realitive_Realation` varchar(255) NOT NULL,
   `phone` varchar(15) NOT NULL,
-  `time_hour` varchar(6) DEFAULT NULL,
+  `time_hour` varchar(255) DEFAULT NULL,
   `Place` varchar(255) NOT NULL,
   `clinic` varchar(255) NOT NULL,
   `patient_age` int(5) NOT NULL,
@@ -47,23 +47,7 @@ CREATE TABLE `appointment` (
 --
 
 INSERT INTO `appointment` (`FName`, `Realitive_Realation`, `phone`, `time_hour`, `Place`, `clinic`, `patient_age`, `message_sent`, `email`, `id`, `status`, `time_appointment`) VALUES
-('zaid almasarwa', 'child', '07867075222', '21:58:', '', '1', 20, '0', 'almasarwazaid@gmail.com', 1, 0, ''),
-('zaid almasarwa', 'child', '07867075222', '22:02:', '', '1', 20, '0', 'almasarwazaid@gmail.com', 2, 0, ''),
-('Qusai', 'Hamdan', '077843448454', '22:46:', '', '1', 19, '0', 'almasarwazaid@gmail.com', 3, 0, '2022-12-22'),
-('Qusai', 'Hamdan', '077843448454', '22:46:', '', '1', 19, '0', 'almasarwazaid@gmail.com', 4, 0, '2022-12-22'),
-('Qusai', 'Hamdan', '047946994', '22:48:', '', '1', 20, '0', 'almasarwazaid@gmail.com', 5, 0, '2022-12-30'),
-('Qusai', 'Hamdan', '077843448454', '22:52:', '', '1', 19, '0', 'almasarwazaid@gmail.com', 6, 0, '2022-12-22'),
-('Qusai', 'Hamdan', '077843448454', '22:52:', '', '1', 19, '0', 'almasarwazaid@gmail.com', 7, 0, '2022-12-22'),
-('qusai', 'child', '5876', '22:53:', '', '1', 20, '0', 'almasarwazaid@gmail.com', 8, 0, '2023-03-04'),
-('Qusai', 'Hamdan', '0777777777', '15:00', '', '1', 25, '0', 'almasarwazaid@gmail.com', 9, 0, '2023-03-31'),
-('zaid almasarwa', 'ss', '0789999999999', '19:00', '', '1', 95, '0', 'almasarwazaid@gmail.com', 10, 0, '2022-12-20'),
-('zaid almasarwa', 'ss', '0789999999999', '19:00', '', '1', 95, '0', 'almasarwazaid@gmail.com', 11, 0, '2022-12-20'),
-('QUSAIhamdan', 'childd', '077797977', '22:15', '', '1', 42, '0', 'almasarwazaid@gmail.com', 12, 0, '2022-02-22'),
-('ZAID MASARWAH', 'CHILDEDD', '07779797', '22:00', '', '1', 50, '0', 'almasarwazaid@gmail.com', 13, 0, '2023-02-22'),
-('uuuuu', '', '68789798', '10 AM', '', '1', 88, '0', 'almasarwazaid@gmail.com', 14, 0, '2023-11-22'),
-('uuuuu', '', '68789798', '10 AM', '', '1', 88, 'Helllooo', 'almasarwazaid@gmail.com', 15, 0, '2023-11-22'),
-('zaid', '', '2222222', '1 PM', '', '1', 15, 'ooooo', 'almasarwazaid@gmail.com', 16, 0, '2022-12-23'),
-('nmnkjkj', 'Brother', '077979797', '3 PM', '', '1', 100, 'jgjhgj', 'almasarwazaid@gmail.com', 17, 0, '0069-05-29');
+('mohammad', 'Me', '0789546321', '10:00 AM', '', '5', 54, '', 'mohammad@gmail.com', 70, 0, '2023-01-27');
 
 -- --------------------------------------------------------
 
@@ -91,9 +75,43 @@ CREATE TABLE `doctor` (
 
 INSERT INTO `doctor` (`Email`, `Pass`, `Name`, `specialty`, `location_Doc`, `Fees`, `id`, `Phone`, `evaluation`, `img`, `Waiting_Time`) VALUES
 ('ahmadalmasarwa@email.com', 'Azazaz1212', 'DR.Ahmad Almasarwa', 'Ear Nose and Throat', 'Amman', 20, 1, '0784567891', 4, '../images/user.png', '30'),
-('mohammedmostafa@email.com', 'Azazaz1212', 'DR.mohammad Mostafa', 'Ear Nose and Throat', 'Maan', 300, 2, '0794567891', 4, '../images/user.png', '30'),
-('zaidallabadi@gmail.com ', 'Azazaz1212', 'DR.Abdalla Al-makahleh', 'Gynecology and Infertility', 'Maan', 20, 3, '0784567258', 4, '../images/user.png', '20'),
-('osamamo@gmail.com', 'Azazaz1212', 'DR.osama malkawi', 'Ear Nose and Throat', 'Maan', 20, 4, '0784567457', 4, '../images/user.png', '30');
+('mohammedmostafa@email.com', 'Azazaz1212', 'DR.mohammad Mostafa', 'Ear Nose and Throat', 'Maan', 30, 2, '0794567891', 4, '../images/user.png', '30'),
+('abdallmakahleh@gmail.com', 'Azazaz1212', 'DR.Abdalla Al-makahleh', 'Gynecology and Infertility', 'Maan', 20, 3, '0784567258', 4, '../images/user.png', '20'),
+('osamamo@gmail.com', 'Azazaz1212', 'DR.osama malkawi', 'Ear Nose and Throat', 'Maan', 20, 4, '0784567457', 4, '../images/user.png', '30'),
+('mousaalkhalid@gmail.com', 'Azazaz1212', 'DR.Mousa AL-khalid', 'Ear Nose and Throat', 'Irbid', 25, 5, '0785585222', 4, '../images/user.png', '20'),
+('maheralmalik@gmail.com', 'Azazaz1212', 'DR.Maher AL-malik', 'Ear Nose and Throat', 'Irbid', 15, 6, '0785214547', 4, '../images/user.png', '30'),
+('sawsanmo@gmail.com', 'Azazaz1212', 'DR.Sawsan Omar', 'Radiology', 'Irbid', 20, 7, '0794567587', 4, '../images/user.png', '30'),
+('lailasa@gmail.com', 'Azazaz1212', 'DR.Laila Issa', 'Radiology', 'Irbid', 15, 8, '0785285022', 4, '../images/user.png', '30');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `doc_time`
+--
+
+CREATE TABLE `doc_time` (
+  `id` int(11) NOT NULL,
+  `times_d` varchar(9) NOT NULL,
+  `isBooking` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `doc_time`
+--
+
+INSERT INTO `doc_time` (`id`, `times_d`, `isBooking`) VALUES
+(5, '8:00 am', 0),
+(5, '9:00 am', 0),
+(5, '10:00 am', 0),
+(5, '11:00 am', 0),
+(5, '12:00 pm', 0),
+(5, '1:00 pm', 0),
+(5, '2:00 pm', 0),
+(5, '3:00 pm', 0),
+(5, '4:00 pm', 0),
+(5, '6:00 pm', 0),
+(5, '7:00 pm', 0),
+(5, '8:00 pm', 0);
 
 -- --------------------------------------------------------
 
@@ -156,11 +174,11 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`Name`, `Email`, `Pass`, `phone`) VALUES
-('', '', '', ''),
-('nmnkjkj', 'almasarw55azaid@gmail.com', 'ssSS12121', '8828828282'),
-('zaid', 'almasarwazaid@gmail.com', 'Azazaz1212', '0786707010'),
-('zaid almasarwa', 'mxcnkjncj@gmail.com', 'Azazaz1212', 'vdnkdvncb'),
-('mncsjxcb', 'zaid0000@gmail.com', 'Azazaz1212', '07821152266');
+('mohammad ', '', 'Azazaz1212', '07867075222'),
+('zaid almasarwa', 'almasarwazaid@gmail.com', 'Azazaz1212', '0786707010'),
+('aya meqday', 'ayameq@gmail.com', 'Azazaz1212', '07867075555'),
+('mohammad', 'mohammad@gmail.com', 'Azazaz1212', '07867075222'),
+('obada emad', 'obadaemad@gmail.com', 'Azazaz1212', '0786808010');
 
 --
 -- Indexes for dumped tables
@@ -192,13 +210,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `appointment`
 --
 ALTER TABLE `appointment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `doctor`
 --
 ALTER TABLE `doctor`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
