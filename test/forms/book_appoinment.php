@@ -145,6 +145,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name'])) {
               <option value="Mom">Mom</option>
               <option value="Brother">Brother</option>
               <option value="Sister">Sister</option>
+              <option value="Sister">Wife</option>
+
             </select>
           </div>
           <!-- <div class="col-md-4 form-group mt-3 mt-md-0">

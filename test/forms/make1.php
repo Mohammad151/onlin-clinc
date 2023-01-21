@@ -85,6 +85,8 @@ session_start();
         <ul>
           <li><a class="nav-link scrollto" href="../index.php">Home</a></li>
           <li><a class="nav-link scrollto active" href="book_appoinment.html">Appointment</a></li>
+          <!-- <li><a class="nav-link scrollto" href="">Departments</a></li> -->
+
           <!-- <li><a class="nav-link scrollto" href="login.html">Login</a></li>
           <li><a class="nav-link scrollto" href="sign_up.html">Sign Up</a></li> -->
         </ul>
