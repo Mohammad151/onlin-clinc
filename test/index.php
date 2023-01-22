@@ -152,7 +152,7 @@ $_SESSION['LAST_ACTIVITY'] = time(); // update last activity time stamp
                 It has a lot of options and has a lot of advantages such as:
               </p>
               <div class="text-center">
-                <a href="#about" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+                <!-- <a href="#about" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a> -->
               </div>
             </div>
           </div>
