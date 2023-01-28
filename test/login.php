@@ -48,6 +48,8 @@ session_start();
    <link rel="preconnect" href="https://fonts.gstatic.com" />
    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
    <link rel="stylesheet" href="style.css">
+   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
     <!-- Favicons -->
   <link href="images/O N L I N E.jpg" rel="icon">
    <style>
@@ -60,7 +62,7 @@ session_start();
          position: relative;
          left: -35px;
       }
-
+      
       
    </style>
 </head>
@@ -140,11 +142,16 @@ session_start();
                   <i class="fas fa-envelope"></i>
                </div>
             </div>
-
-            <div class="password input-cont d-flex">
-               <input  type="password" id="psw" class="input" placeholder="Password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" />
+            
+            <div class="password input-cont d-flex ">
+               <input  type="password" id="inputPass" class="input" placeholder="Password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" />
+               <!-- An element to toggle between password visibility -->
+               
                <div class="icon">
                   <i class="fas fa-lock"></i>
+               </div>
+               <div class="icon" style="display: absolute; left:93%;">
+                  <span class="bi bi-eye-fill "    id="psw"   style="font-size: 16px;color:black;" onclick="myFunction()"></span>
                </div>
 
             </div>
@@ -157,6 +164,7 @@ session_start();
             <button type="submit" class="sign-in" name="submit">SIGN IN</button>
          </div>
       </form>
+      
       <div class="particle-wrapper">
          <div class="particle">
             <div class="circle"></div>
@@ -175,68 +183,28 @@ session_start();
          </div>
       </div>
    </div>
-</body>
-
-</html>
-<script>
+   <script>
    document.getElementById('my-button').addEventListener('click', () => {
       location.href = 'http://127.0.0.1:5500/sign_up.html';
    });
-   // var myInput = document.getElementById("psw");
-   // var letter = document.getElementById("letter");
-   // var capital = document.getElementById("capital");
-   // var number = document.getElementById("number");
-   // var length = document.getElementById("length");
+   function myFunction() {
+  var inputPass = document.getElementById('inputPass'),
+      span = document.getElementById('psw');
+      if (inputPass.type === "password") {
+         inputPass.type = "text";
+         span.setAttribute('class','bi bi-eye-slash-fill');
+   } else {
+      inputPass.type = "password";
+      span.setAttribute('class' , 'bi bi-eye-fill');
+  }
+}
 
-   // // When the user clicks on the password field, show the message box
-   // myInput.onfocus = function() {
-   //    document.getElementById("message").style.display = "block";
-   // }
 
-   // // When the user clicks outside of the password field, hide the message box
-   // myInput.onblur = function() {
-   //    document.getElementById("message").style.display = "none";
-   // }
-
-   // // When the user starts to type something inside the password field
-   // myInput.onkeyup = function() {
-   //    // Validate lowercase letters
-   //    var lowerCaseLetters = /[a-z]/g;
-   //    if (myInput.value.match(lowerCaseLetters)) {
-   //       letter.classList.remove("invalid");
-   //       letter.classList.add("valid");
-   //    } else {
-   //       letter.classList.remove("valid");
-   //       letter.classList.add("invalid");
-   //    }
-
-   //    // Validate capital letters
-   //    var upperCaseLetters = /[A-Z]/g;
-   //    if (myInput.value.match(upperCaseLetters)) {
-   //       capital.classList.remove("invalid");
-   //       capital.classList.add("valid");
-   //    } else {
-   //       capital.classList.remove("valid");
-   //       capital.classList.add("invalid");
-   //    }
-
-   //    // Validate numbers
-   //    var numbers = /[0-9]/g;
-   //    if (myInput.value.match(numbers)) {
-   //       number.classList.remove("invalid");
-   //       number.classList.add("valid");
-   //    } else {
-   //       number.classList.remove("valid");
-   //       number.classList.add("invalid");
-   //    }
-
-   //    // Validate length
-   //    if (myInput.value.length >= 8) {
-   //       length.classList.remove("invalid");
-   //       length.classList.add("valid");
-   //    } else {
-   //       length.classList.remove("valid");
-   //       length.classList.add("invalid");
-   //    }
-   // }
+   
+   
 </script>
+</body>
+
+
+</html>
+
